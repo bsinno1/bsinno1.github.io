@@ -99,15 +99,29 @@
         <div class="repo-head">
           <a class="repo-name" href="https://github.com/bsinno1/political-polarization-NAACL" target="_blank" rel="noopener">political-polarization-NAACL</a>
           <span class="repo-tag">Fork</span>
+          <span class="repo-tag">Dataset</span>
+          <span class="repo-tag">MIT</span>
         </div>
-        <p style="margin-bottom:0;">
+        <p style="margin-bottom:8px;">
           Code and annotated corpus for "Political ideology and polarization of policy positions: A
           multi-dimensional approach" (NAACL 2022) &mdash; the first diachronic dataset of news articles
           annotated at paragraph level for ideology by trained political scientists and linguists.
         </p>
+        <p style="margin-bottom:0;">
+          <strong>The dataset.</strong> 333 gold-annotated articles
+          (<code>gold_train</code> 297 / <code>gold_dev</code> 18 / <code>gold_test</code> 18). Each
+          article carries an author-stance label plus per-paragraph labels on <strong>three ideological
+          dimensions</strong> &mdash; fiscal, social, and foreign &mdash; for up to 12 paragraphs, coded
+          left-leaning, right-leaning, <em>mixed</em> (both present), or not relevant to the dimension.
+          That is 5,346 paragraph-label cells in the training split alone, evenly split across the three
+          dimensions. A companion file supplies year, publication, and original plus segmented text for
+          579 articles, joined on article ID. Annotating the author's stance separately from each
+          paragraph is what lets ideological position be measured while controlling for who is speaking.
+        </p>
         <div class="repo-meta">
-          <span>Unmodified fork of <a href="https://github.com/bernovie/political-polarization" target="_blank" rel="noopener">bernovie/political-polarization</a> @ <code>38a61f2</code></span>
+          <span>Unmodified fork of <a href="https://github.com/bernovie/political-polarization" target="_blank" rel="noopener">bernovie/political-polarization</a> @ <code>38a61f2</code> &middot; MIT, &copy; 2022 Bernardo Oviedo</span>
           <span><a href="https://aclanthology.org/2022.naacl-main.17/" target="_blank" rel="noopener">Paper</a></span>
+          <span><a href="https://github.com/bernovie/political-polarization/blob/master/data/README.md" target="_blank" rel="noopener">Data README</a></span>
         </div>
       </div>
 
