@@ -7,7 +7,7 @@ no build step, no dependencies. Edit the HTML directly and push.
 
 ```
 index.html            Home — bio, fields & methods, news, selected publications, education, misc
-research.html         Research agenda, dissertation, research experience, business & industry
+research.html         Research agenda, dissertation, fields & methods, research experience
 publications.html     Peer-reviewed / in preparation / book reviews, with filter buttons
 teaching.html         Teaching by institution + courses prepared to teach
 awards.html           Awards, fellowships, research funding
