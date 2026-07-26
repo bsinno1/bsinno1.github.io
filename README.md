@@ -6,14 +6,18 @@ no build step, no dependencies. Edit the HTML directly and push.
 ## Files
 
 ```
-index.html            Home — bio, research interests, news, selected publications, education, misc
-publications.html     Full publication list with All / Conference / In Progress filter buttons
-teaching.html         Teaching by institution
-awards.html           Honors, awards, grants
-service.html          Talks, academic service, data/code releases, non-academic service
+index.html            Home — bio, fields & methods, news, selected publications, education, misc
+research.html         Research agenda, dissertation, research experience, business & industry
+publications.html     Peer-reviewed / in preparation / book reviews, with filter buttons
+teaching.html         Teaching by institution + courses prepared to teach
+awards.html           Awards, fellowships, research funding
+service.html          Academic, community & professional service; languages & citizenship
 assets/css/style.css  All styling (colors live in the `:root` block at the top)
 assets/img/           Put your headshot here as profile.jpg (square crop; 400×400 or larger)
 ```
+
+Content is drawn from `barea_sinno_cv_su26.pdf` (Summer 2026 CV). When the CV changes, these are
+the pages to update alongside it.
 
 ## Local preview
 
@@ -48,7 +52,7 @@ git push -u origin master
 - **Colors** — change `--primary`, `--accent`, and `--accent-light` in `assets/css/style.css`.
   Everything else derives from those three.
 - **Navigation** — the nav block is duplicated in each HTML file. If you add or rename a page,
-  update all five, and move the `class="active"` marker to the current page.
+  update all six, and move the `class="active"` marker to the current page.
 - **News** — newest entry first; each `<li>` is a `.news-date` span followed by a content span.
 - **Publications** — the filter buttons match `data-filter` on the button against `data-type` on
   each `.pub-item` and `data-section` on each `.pub-year-heading`. Keep those attributes in sync
@@ -57,11 +61,12 @@ git push -u origin master
 
 ## Placeholders still to fill
 
-Search the HTML for `<!--` comments and `<em>` italics — those mark the spots where real detail
-is needed: course numbers and terms on the teaching page, fellowship names on the awards page,
-reviewing venues on the service page, and dissertation chapter titles / target venues on the
-publications page. Also add a Google Scholar link to the social icons in `index.html` if you have
-a profile.
+Two social-icon URLs in `index.html` are marked with HTML comments — Google Scholar and LinkedIn.
+The CV names both profiles but not their URLs, so those icons are omitted until you paste them in.
+
+Deliberately **not** on the site, though they are on the CV: phone number, academic references
+(Beth Leech, Junyi Jessy Li, Richard Lau), and the CV PDF itself. Add any of them if you want
+them public — the CV PDF would go in `assets/` with a nav link.
 
 ## Layout credit
 

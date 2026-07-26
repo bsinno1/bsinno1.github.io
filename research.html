@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research &middot; Barea M. Sinno</title>
+  <meta name="description" content="Research agenda and experience — measurement validity, reliability, and comparability of LLM-based measurement instruments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-name">Barea M. Sinno</a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="awards.html">Awards</a>
+        <a href="service.html">Service</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-body">
+    <div class="container">
+
+      <!-- Research Agenda -->
+      <section>
+        <h1 class="section-title page-title">Research Agenda</h1>
+        <p style="margin-bottom:14px;">
+          I study measurement: whether the instruments social science increasingly relies on &mdash; large
+          language models used to score political text &mdash; actually measure what they claim to, with what
+          reliability, and under what conditions their scores can legitimately be compared across time and
+          settings. My dissertation develops the <strong>Measurement, Evaluation and Validation (MEV)</strong>
+          framework, which treats constrained LLM evaluators as scientific instruments whose validity,
+          reliability, and comparability must be demonstrated rather than assumed.
+        </p>
+        <p style="margin-bottom:14px;">
+          Current work extends that discipline to AI evaluation itself, organized around three questions:
+          <em>is the score valid</em>, <em>is it stable</em>, and <em>can the internal signal be trusted</em>.
+          Recent results include certifying that temperature-0 evaluation is bitwise reproducible when its
+          full configuration is pinned &mdash; locating evaluation variance in configuration and version change
+          rather than in the models themselves &mdash; and automating the dissertation's instrument into a
+          self-validating tool that tracks partisan affect in congressional floor speech over time.
+        </p>
+        <p style="margin-bottom:0;">
+          The agenda's aim is a general statistical framework for quantifying evaluator uncertainty across
+          both open-weight and proprietary-model regimes, with reporting standards that let researchers state
+          how much confidence an AI-generated measurement deserves. Substantive applications center on
+          political language over time &mdash; partisan affect, ideology, and legislative speech &mdash; across
+          comparative and international contexts.
+        </p>
+      </section>
+
+      <!-- Dissertation -->
+      <section>
+        <h2 class="section-title">Dissertation</h2>
+        <div class="card card--callout">
+          <p style="margin-bottom:10px;">
+            <strong>Measuring Political Concepts Over Time with Constrained LLMs</strong><br>
+            <span class="note">Ph.D., Political Science (Political Methodology), Rutgers University &mdash; conferred May 17, 2026<br>
+            Committee: Beth Leech (chair) &middot; Junyi Jessy Li (Linguistics, UT Austin) &middot; Richard Lau &middot; Jan Kubik</span>
+          </p>
+          <p style="margin-bottom:10px;">
+            The dissertation develops the Measurement, Evaluation, and Validation (MEV) framework for
+            measuring latent political concepts &mdash; partisan affect, national economic ideology &mdash; in text
+            spanning several decades, where the meaning of the concepts themselves drifts. Constrained large
+            language models (fixed output space with human-in-the-loop validation, temperature-0 inference,
+            era-grounded exemplars) serve as the measurement instruments; the constraints support
+            reproducibility and limit annotation, prompt, and automation bias.
+          </p>
+          <p style="margin-bottom:0;">
+            Scores are validated against exogenous benchmarks, and a drift taxonomy (semantic, conceptual,
+            predictive) distinguishes change in a concept from change in the instrument. Analyses cover ANES
+            survey text (1984&ndash;2020) and extend to congressional floor speech, with fully seeded,
+            reproducible pipelines.
+          </p>
+        </div>
+      </section>
+
+      <!-- Fields & Methods -->
+      <section>
+        <h2 class="section-title">Fields &amp; Methods</h2>
+        <h3 class="subhead" style="font-size:0.95rem; margin-top:0;">Fields</h3>
+        <div class="interest-tags" style="margin-bottom:18px;">
+          <span class="interest-tag">AI Measurement Science</span>
+          <span class="interest-tag">Political Methodology</span>
+          <span class="interest-tag">Computational Social Science</span>
+        </div>
+        <h3 class="subhead" style="font-size:0.95rem;">Methods</h3>
+        <div class="interest-tags">
+          <span class="interest-tag">Construct validation</span>
+          <span class="interest-tag">Reliability analysis</span>
+          <span class="interest-tag">Measurement invariance</span>
+          <span class="interest-tag">Experimental design</span>
+          <span class="interest-tag">Statistical modeling</span>
+          <span class="interest-tag">Causal inference</span>
+          <span class="interest-tag">Computational text analysis</span>
+          <span class="interest-tag">LLM-based measurement &amp; evaluation</span>
+        </div>
+      </section>
+
+      <!-- Research Experience -->
+      <section>
+        <h2 class="section-title">Research Experience</h2>
+
+        <h3 class="subhead">Independent Researcher &mdash; AI Evaluation Infrastructure</h3>
+        <p class="note" style="margin-bottom:12px;">May 2026 &ndash; present &middot; Austin, TX</p>
+        <p style="margin-bottom:14px;">
+          <em>Measurement on the measurers: validate closed models at the boundary; certify open models from
+          inside the stack.</em>
+        </p>
+
+        <div class="card">
+          <p style="margin-bottom:6px;"><strong>Closed models &mdash; is the score valid?</strong></p>
+          <p style="margin-bottom:0;">
+            Automating the dissertation's MEV framework into a self-validating text-to-measurement instrument
+            for constrained LLMs (fixed output space, temperature 0, era-grounded exemplars), checking every
+            score against blinded exogenous benchmarks with falsifiable verdicts (validated, refinable,
+            misspecified); deployed beyond its native survey domain onto congressional floor speech to
+            generate an affective measure for Congress over time. Offline tier validated at
+            <em>n</em>&nbsp;=&nbsp;1200 (<em>r</em>&nbsp;=&nbsp;0.70), with injected drift correctly downgrading
+            the verdict. The affect measure demonstrates the instrument; the instrument is the contribution.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="margin-bottom:6px;"><strong>Open models &mdash; certified from inside the stack, in two layers.</strong></p>
+          <p style="margin-bottom:10px;">
+            <em>Behavioral layer &mdash; is the score stable?</em>
+            A purpose-built reliability harness &mdash; when the measurement layer is itself the object of study,
+            the instrument cannot inherit untested machinery &mdash; testing whether identically configured
+            temperature-0 evaluation ever disagrees with itself. Qwen2.5-0.5B and SmolLM2-360M, a frozen
+            hash-verified 100-prompt probe set, five to ten replications per configuration (more than two
+            dozen hash-verified runs), spanning CPU/GPU execution, precision formats, batching, threading,
+            autotuned kernels, and 2-/4-way tensor-parallel inference on a pinned NVIDIA A100, with
+            hypotheses hashed before any run. Every replication was bit-for-bit identical; variance appears
+            only <em>between</em> configurations, spanning four orders of magnitude with precision format
+            dominant. The bitwise-zero baseline doubles as a tripwire for silent environment change.
+            Cross-architecture certification in progress.
+          </p>
+          <p style="margin-bottom:0;">
+            <em>Mechanistic layer &mdash; can the internal signal be trusted?</em>
+            A decoding instrument exposing per-layer internals over a single cached forward pass, evaluated on
+            LAMBADA &mdash; logit-lens trajectories, per-head attention maps, a temperature-controlled beam tree
+            &mdash; subjecting internal signals to the same standard as any score and gating pass/fail verdicts
+            into the same hashed attestation records as the behavioral certification (aligned to NIST AI RMF
+            and EU AI Act record-keeping). Conformal calibration in progress.
+          </p>
+        </div>
+
+        <h3 class="subhead">LLM Safety Evaluation &amp; Red-Teaming &mdash; Google</h3>
+        <p class="note" style="margin-bottom:10px;">Oct 2024 &ndash; May 2025 &middot; Gemini safety evaluation; contract engagement via Vaco &middot; Austin, TX</p>
+        <div class="card">
+          <p style="margin-bottom:0;">
+            Designed and executed adversarial red-teaming protocols for LLM safety, systematically probing for
+            failure modes, harmful content, and behavioral inconsistencies; converted qualitative failure modes
+            into structured evidence supporting model-risk assessment, evaluator refinement, and deployment
+            decisions.
+          </p>
+        </div>
+
+        <h3 class="subhead">Visiting Scholar &amp; Fellow &mdash; University of Texas at Austin</h3>
+        <p class="note" style="margin-bottom:10px;">2019 &ndash; 2024 &middot; Department of Linguistics &middot; Advisor: Junyi Jessy Li, Ph.D.</p>
+        <div class="card">
+          <p style="margin-bottom:0;">
+            Embedded as the measurement specialist inside an NLP research group &mdash; the interface between
+            engineers who needed a labelable task and social scientists who needed a defensible construct.
+            I operationalized contested theoretical concepts into annotation protocols and scoring criteria
+            that models could actually be trained and evaluated against, settling <em>what the label means</em>
+            before any modeling began. The role produced three peer-reviewed papers
+            (<a href="publications.html">NAACL 2022, first author; EMNLP 2019; EACL 2023</a>) and several
+            graduate training classes.
+          </p>
+        </div>
+
+        <h3 class="subhead">Earlier Research Appointments</h3>
+        <ul class="service-list">
+          <li><strong>Graduate Research Assistant</strong>, Irma Rangel Public Policy Institute, University of
+            Texas at Austin, 2019&ndash;2020 &middot; supervisor: David Leal, Ph.D.</li>
+          <li><strong>Research Assistant</strong>, Intergroup Relations and the Social Mind Lab, Columbia
+            University, 2012&ndash;2014 &middot; supervisor: Valerie Purdie-Greenaway, Ph.D.</li>
+          <li><strong>Conflict Research &amp; Analysis</strong>, Tanenbaum Center for Interreligious
+            Understanding, 2013&ndash;2014 &middot; contributed to <em>Peacemakers in Action</em> (Cambridge
+            University Press, 2016) &mdash; see <a href="service.html">Service</a></li>
+        </ul>
+      </section>
+
+      <!-- Business & Industry -->
+      <section>
+        <h2 class="section-title">Business &amp; Industry Experience</h2>
+
+        <h3 class="subhead">Business Development Manager &mdash; Montreal, Canada</h3>
+        <p class="note" style="margin-bottom:10px;">2010 &ndash; 2011</p>
+        <div class="card">
+          <p style="margin-bottom:0;">
+            Led the feasibility study for converting the bank's Montreal Representative Office into a North
+            American operational branch; coordinated regulatory compliance with Canadian federal and
+            provincial bodies.
+          </p>
+        </div>
+
+        <h3 class="subhead">Corporate Strategy, Operations, and Communications &mdash; Beirut, Lebanon</h3>
+        <p class="note" style="margin-bottom:10px;">2000 &ndash; 2010</p>
+        <div class="card">
+          <ul class="service-list">
+            <li>Led the drafting and production of the banking group's annual report for ten consecutive years,
+              integrating financial performance, governance disclosures, and stakeholder communication.</li>
+            <li>Appointed Lead Coordinator for the bank's Initial Public Offering (IPO), working with Credit
+              Suisse on internal readiness, documentation, and interdepartmental coordination.</li>
+            <li>Served as coordinating officer for an International Finance Corporation (IFC) due diligence
+              process covering five core departments representing approximately 85% of the bank's business
+              activity.</li>
+            <li>Co-developed and advised on the design and implementation of an employee stock ownership
+              program (ESOP) in coordination with senior management and HR.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 Barea M. Sinno
+  </footer>
+</body>
+</html>

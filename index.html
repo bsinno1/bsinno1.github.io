@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barea M. Sinno</title>
-  <meta name="description" content="Barea M. Sinno — political scientist working on computational measurement of ideological and affective polarization.">
+  <meta name="description" content="Barea M. Sinno — political methodologist working on the validity, reliability, and comparability of LLM-based measurement.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
       </button>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="teaching.html">Teaching</a>
         <a href="awards.html">Awards</a>
@@ -38,31 +39,32 @@
              onerror="this.src='assets/img/placeholder.svg'">
         <div class="hero-info">
           <h1>Barea M. Sinno</h1>
-          <p class="subtitle">Ph.D., Political Science<br>
-            <a href="https://polisci.rutgers.edu/" target="_blank" rel="noopener">Department of Political Science</a>, Rutgers University</p>
+          <p class="subtitle">Political Methodologist &middot; AI Measurement Science<br>
+            Independent Researcher, AI Evaluation Infrastructure &middot; Austin, TX</p>
 
           <p class="bio">
-            I am a political scientist working at the intersection of political behavior and
-            natural language processing. My research asks how ideology and political affect can be
-            <em>measured</em> from text: what people actually say about policy, about their own side,
-            and about the other side &mdash; and how those expressions move over time.
+            I study <strong>measurement</strong>: whether the instruments social science increasingly relies on
+            &mdash; large language models used to score political text &mdash; actually measure what they claim to,
+            with what reliability, and under what conditions their scores can legitimately be compared across
+            time and settings.
           </p>
           <p class="bio">
-            My dissertation develops two complementary measurement strategies on the American National
-            Election Studies (ANES) instrument: an <strong>affect</strong> chapter that recovers
-            interpersonal and partisan sentiment from open-ended likes/dislikes responses and validates
-            it against feeling-thermometer scores, and an <strong>ideology</strong> chapter that combines
-            expert annotation with large language models to place most-important-problem responses on a
-            multi-dimensional ideological space. Earlier work, with collaborators at UT Austin and the
-            University of Pittsburgh, produced the first diachronic corpus of news articles annotated for
-            paragraph-level ideology by trained political scientists and linguists, and a dataset of
-            U.S. Congress members' tweets annotated for interpersonal emotion.
+            My dissertation, <em>Measuring Political Concepts Over Time with Constrained LLMs</em>, develops the
+            <strong>Measurement, Evaluation and Validation (MEV)</strong> framework, which treats constrained LLM
+            evaluators as scientific instruments whose validity, reliability, and comparability must be
+            demonstrated rather than assumed. It measures partisan affect and national economic ideology in ANES
+            survey text from 1984 to 2020 &mdash; text spanning decades over which the meaning of the concepts
+            themselves drifts &mdash; and introduces a drift taxonomy that distinguishes change in a concept from
+            change in the instrument.
           </p>
           <p class="bio">
-            Before graduate school I spent a decade in banking strategy in Beirut and Montreal, where I
-            authored the bank's annual report and led a restructuring of its credit card division. I
-            have also taught for two decades as adjunct faculty at Rutgers, Texas A&amp;M, and
-            Universit&eacute; Saint-Joseph.
+            Current work extends that discipline to AI evaluation itself, organized around three questions:
+            <em>is the score valid</em>, <em>is it stable</em>, and <em>can the internal signal be trusted</em>.
+            I received my Ph.D. in Political Science (Political Methodology) from
+            <a href="https://polisci.rutgers.edu/" target="_blank" rel="noopener">Rutgers University</a> in May
+            2026, advised by Beth Leech, and spent 2019&ndash;2024 as a visiting scholar in Linguistics at UT
+            Austin with Junyi Jessy Li. Before academia I spent a decade in banking strategy in Beirut and
+            Montreal. <a href="research.html">More on the research &rarr;</a>
           </p>
 
           <div class="contact-row">
@@ -77,7 +79,7 @@
           </div>
 
           <div class="social-links">
-            <!-- Add a Google Scholar profile URL here if you have one. -->
+            <!-- Paste your Google Scholar profile URL here (the CV lists a profile but not its URL). -->
             <a href="https://www.semanticscholar.org/author/Barea-M.-Sinno/108792855" target="_blank" rel="noopener" title="Semantic Scholar">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
             </a>
@@ -87,8 +89,9 @@
             <a href="https://github.com/bsinno1" target="_blank" rel="noopener" title="GitHub">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             </a>
-            <a href="https://rutgers.academia.edu/BareaSinno" target="_blank" rel="noopener" title="Academia.edu">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 8.5v2L12 5l10 5.5v-2L12 3zM5 12v6.5c0 .8.6 1.5 1.4 1.5h11.2c.8 0 1.4-.7 1.4-1.5V12l-7 3.8L5 12z"/></svg>
+            <!-- Paste your LinkedIn profile URL here. -->
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=57216692566" target="_blank" rel="noopener" title="Scopus">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm3.5 6.2-.9 1.5a4.6 4.6 0 0 0-2.3-.7c-1 0-1.7.5-1.7 1.2 0 .8.9 1.1 2 1.5 1.5.5 3 1.1 3 3 0 2-1.7 3.1-3.7 3.1a5.9 5.9 0 0 1-3.4-1l.9-1.6c.8.5 1.7.9 2.6.9 1 0 1.8-.4 1.8-1.2s-.9-1.1-2-1.5c-1.5-.5-3-1.1-3-3.1C9.8 8.2 11.4 7 13.4 7c.8 0 1.6.2 2.1.5z"/></svg>
             </a>
           </div>
         </div>
@@ -96,39 +99,47 @@
 
       <!-- Research Interests -->
       <section>
-        <h2 class="section-title">Research Interests</h2>
+        <h2 class="section-title">Fields &amp; Methods</h2>
         <div class="interest-tags">
-          <span class="interest-tag">Political polarization</span>
-          <span class="interest-tag">Ideology measurement</span>
-          <span class="interest-tag">Affective polarization</span>
-          <span class="interest-tag">NLP for social science</span>
-          <span class="interest-tag">Large language models as annotators</span>
-          <span class="interest-tag">Survey open-ended responses</span>
-          <span class="interest-tag">Corpus annotation &amp; reliability</span>
+          <span class="interest-tag">AI Measurement Science</span>
+          <span class="interest-tag">Political Methodology</span>
+          <span class="interest-tag">Computational Social Science</span>
+          <span class="interest-tag">Construct validation</span>
+          <span class="interest-tag">Reliability analysis</span>
+          <span class="interest-tag">Measurement invariance</span>
+          <span class="interest-tag">Causal inference</span>
+          <span class="interest-tag">Text-as-data</span>
+          <span class="interest-tag">LLM-based measurement &amp; evaluation</span>
         </div>
       </section>
 
-      <!-- News — edit these as things happen; newest first. -->
+      <!-- News — newest first. -->
       <section>
         <h2 class="section-title">News</h2>
         <ul class="news-list">
           <li>
-            <span class="news-date">Jul 2026</span>
-            <span>Released the dissertation code publicly as
-              <a href="https://github.com/bsinno1/barea-dissertation" target="_blank" rel="noopener">bsinno1/barea-dissertation</a>
-              &mdash; the full prompting and analysis pipeline for both the affect and ideology chapters.</span>
+            <span class="news-date">May 2026</span>
+            <span>Ph.D. in Political Science (Political Methodology) conferred by <strong>Rutgers University</strong> on May 17, 2026. Committee: Beth Leech (chair), Junyi Jessy Li, Richard Lau, and Jan Kubik.</span>
           </li>
           <li>
-            <span class="news-date">May 2023</span>
-            <span>Our paper "How people talk about each other: Modeling Generalized Intergroup Bias and Emotion" appeared at <strong>EACL 2023</strong>.</span>
+            <span class="news-date">May 2026</span>
+            <span>Began an independent research program on <a href="research.html"><strong>AI evaluation infrastructure</strong></a> &mdash; validating closed models at the boundary and certifying open models from inside the stack.</span>
+          </li>
+          <li>
+            <span class="news-date">Spring 2026</span>
+            <span>Taught Research Methods as Instructor at <strong>Universit&eacute; Saint-Joseph</strong>, Beirut.</span>
+          </li>
+          <li>
+            <span class="news-date">May 2025</span>
+            <span>Concluded a Gemini safety evaluation and red-teaming engagement at <strong>Google</strong> (Oct 2024 &ndash; May 2025).</span>
+          </li>
+          <li>
+            <span class="news-date">2023</span>
+            <span>Served as a peer reviewer for <em>Public Opinion Quarterly</em>, and our paper "How people talk about each other" appeared at <strong>EACL 2023</strong>.</span>
           </li>
           <li>
             <span class="news-date">Jul 2022</span>
-            <span>"Political Ideology and Polarization: A Multi-dimensional Approach" appeared at <strong>NAACL 2022</strong>, releasing the first diachronic ideology-annotated news corpus.</span>
-          </li>
-          <li>
-            <span class="news-date">Nov 2019</span>
-            <span>"Adaptive Ensembling: Unsupervised Domain Adaptation for Political Document Analysis" appeared at <strong>EMNLP-IJCNLP 2019</strong>.</span>
+            <span>"Political Ideology and Polarization of Policy Positions" appeared at <strong>NAACL 2022</strong>, releasing the first diachronic ideology-annotated news corpus.</span>
           </li>
         </ul>
       </section>
@@ -138,8 +149,8 @@
         <h2 class="section-title">Selected Publications</h2>
 
         <div class="pub-item">
-          <span class="pub-title">How people talk about each other: Modeling Generalized Intergroup Bias and Emotion</span><br>
-          <span class="pub-authors">Venkata Subrahmanyan Govindarajan, Katherine Atwell, <strong>Barea Sinno</strong>, Malihe Alikhani, David I. Beaver, Junyi Jessy Li</span><br>
+          <span class="pub-title">How people talk about each other: Modeling generalized intergroup bias and emotion</span><br>
+          <span class="pub-authors">Venkata S. Govindarajan, Katherine Atwell, <strong>Barea Sinno</strong>, Malihe Alikhani, David Beaver, Junyi Jessy Li</span><br>
           <span class="pub-venue">Conference of the European Chapter of the Association for Computational Linguistics (EACL), 2023</span>
           <span class="pub-badge dataset">Dataset</span>
           <div class="pub-links">
@@ -149,10 +160,10 @@
         </div>
 
         <div class="pub-item">
-          <span class="pub-title">Political Ideology and Polarization: A Multi-dimensional Approach</span><br>
+          <span class="pub-title">Political ideology and polarization of policy positions: A multi-dimensional approach</span><br>
           <span class="pub-authors"><strong>Barea Sinno</strong>, Bernardo Oviedo, Katherine Atwell, Malihe Alikhani, Junyi Jessy Li</span><br>
           <span class="pub-venue">Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2022</span>
-          <span class="pub-badge dataset">Dataset</span>
+          <span class="pub-badge">First author</span>
           <div class="pub-links">
             <a href="https://aclanthology.org/2022.naacl-main.17/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Paper</a>
@@ -162,9 +173,9 @@
         </div>
 
         <div class="pub-item">
-          <span class="pub-title">Adaptive Ensembling: Unsupervised Domain Adaptation for Political Document Analysis</span><br>
+          <span class="pub-title">Adaptive ensembling: Unsupervised domain adaptation for political document analysis</span><br>
           <span class="pub-authors">Shrey Desai, <strong>Barea Sinno</strong>, Alex Rosenfeld, Junyi Jessy Li</span><br>
-          <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP), 2019</span>
+          <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019</span>
           <div class="pub-links">
             <a href="https://aclanthology.org/D19-1478/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Paper</a>
@@ -172,7 +183,8 @@
         </div>
 
         <p class="note" style="margin-top:14px;">
-          Full list on the <a href="publications.html">publications page</a>.
+          Four single-authored manuscripts from the dissertation are in preparation &mdash;
+          see <a href="publications.html">Publications</a>.
         </p>
       </section>
 
@@ -181,20 +193,25 @@
         <h2 class="section-title">Education</h2>
         <div class="card">
           <div class="teaching-item">
-            <div class="teaching-course">Ph.D., Political Science</div>
-            <div class="teaching-detail">Rutgers University &middot; dissertation on measuring ideological and affective polarization with NLP</div>
+            <div class="teaching-course">Ph.D., Political Science (Political Methodology)</div>
+            <div class="teaching-detail">Rutgers University, New Brunswick, NJ &middot; 2014&ndash;2016 &amp; 2021&ndash;2026 &middot; conferred May 17, 2026<br>
+              Committee: Beth Leech (chair) &middot; Junyi Jessy Li (Linguistics, UT Austin) &middot; Richard Lau &middot; Jan Kubik</div>
           </div>
           <div class="teaching-item">
-            <div class="teaching-course">M.S., Statistics</div>
-            <div class="teaching-detail">The University of Texas at Austin</div>
+            <div class="teaching-course">M.S., Statistics &amp; Data Science</div>
+            <div class="teaching-detail">The University of Texas at Austin &middot; 2016&ndash;2019</div>
           </div>
           <div class="teaching-item">
             <div class="teaching-course">M.S., Negotiation and Conflict Resolution</div>
-            <div class="teaching-detail">Columbia University</div>
+            <div class="teaching-detail">Columbia University, New York, NY &middot; 2012&ndash;2013</div>
           </div>
           <div class="teaching-item">
             <div class="teaching-course">Executive M.B.A.</div>
-            <div class="teaching-detail">ESCP Business School (ESCP-EAP) &middot; thesis on securitization of credit card receivables (top 2%)</div>
+            <div class="teaching-detail">ESCP Europe, Paris, France &middot; 2003</div>
+          </div>
+          <div class="teaching-item">
+            <div class="teaching-course">Python Bootcamp, Data Science</div>
+            <div class="teaching-detail">Practicum, Newburyport, MA &middot; 2022&ndash;2023</div>
           </div>
         </div>
       </section>
@@ -203,9 +220,9 @@
       <section>
         <h2 class="section-title">Misc</h2>
         <div class="card">
-          <p style="margin-bottom:8px;">🗣️ I work in Arabic (native), French, and English, and read some Spanish.</p>
-          <p style="margin-bottom:8px;">🕊️ Trained mediator and dialogue facilitator &mdash; I spent several years mediating in New York courts and facilitating cross-cultural dialogue for Soliya. It is, in a roundabout way, the same question as my research: what happens to people's language when they disagree.</p>
-          <p style="margin-bottom:0;">📊 I still enjoy a well-made annual report.</p>
+          <p style="margin-bottom:8px;">🗣️ I work in Arabic, French, and English, and read basic Spanish. Citizen of Canada and Lebanon.</p>
+          <p style="margin-bottom:8px;">🕊️ Trained mediator and dialogue facilitator &mdash; court mediation in Westchester and Queens, group moderation for the U.S. Institute of Peace, and East&ndash;West dialogue facilitation for Soliya. It is, in a roundabout way, the same question as my research: what happens to people's language when they disagree.</p>
+          <p style="margin-bottom:0;">📊 Ten annual reports in, I still enjoy a well-made one.</p>
         </div>
       </section>
 

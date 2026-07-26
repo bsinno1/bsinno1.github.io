@@ -18,6 +18,7 @@
       </button>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
         <a href="publications.html" class="active">Publications</a>
         <a href="teaching.html">Teaching</a>
         <a href="awards.html">Awards</a>
@@ -31,24 +32,26 @@
       <h1 class="section-title page-title">Publications</h1>
       <p class="note" style="margin-bottom:24px;">
         Also listed on the
-        <a href="https://aclanthology.org/people/barea-sinno/" target="_blank" rel="noopener">ACL Anthology</a>
-        and <a href="https://www.semanticscholar.org/author/Barea-M.-Sinno/108792855" target="_blank" rel="noopener">Semantic Scholar</a>.
+        <a href="https://aclanthology.org/people/barea-sinno/" target="_blank" rel="noopener">ACL Anthology</a>,
+        <a href="https://www.semanticscholar.org/author/Barea-M.-Sinno/108792855" target="_blank" rel="noopener">Semantic Scholar</a>,
+        and <a href="https://www.scopus.com/authid/detail.uri?authorId=57216692566" target="_blank" rel="noopener">Scopus</a>.
       </p>
 
       <!-- Filter buttons -->
       <div class="pub-filters">
         <button class="pub-filter-btn active" data-filter="all">All</button>
-        <button class="pub-filter-btn" data-filter="conference">Conference</button>
-        <button class="pub-filter-btn" data-filter="progress">In Progress</button>
+        <button class="pub-filter-btn" data-filter="peer-reviewed">Peer-Reviewed</button>
+        <button class="pub-filter-btn" data-filter="in-prep">In Preparation</button>
+        <button class="pub-filter-btn" data-filter="review">Book Reviews</button>
       </div>
 
-      <!-- ==================== Conference papers ==================== -->
-      <h2 class="pub-year-heading" data-section="conference">Peer-Reviewed Conference Papers</h2>
+      <!-- ==================== Peer-reviewed ==================== -->
+      <h2 class="pub-year-heading" data-section="peer-reviewed">Peer-Reviewed Publications</h2>
 
-      <div class="pub-item" data-type="conference">
-        <span class="pub-authors">Venkata Subrahmanyan Govindarajan, Katherine Atwell, <strong>Barea Sinno</strong>, Malihe Alikhani, David I. Beaver, Junyi Jessy Li</span><br>
-        <span class="pub-title">How people talk about each other: Modeling Generalized Intergroup Bias and Emotion</span><br>
-        <span class="pub-venue">Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (EACL), 2023.</span>
+      <div class="pub-item" data-type="peer-reviewed">
+        <span class="pub-authors">Govindarajan, V. S., Atwell, K., <strong>Sinno, B.</strong>, Alikhani, M., Beaver, D., &amp; Li, J. J. (2023).</span><br>
+        <span class="pub-title">How people talk about each other: Modeling generalized intergroup bias and emotion.</span><br>
+        <span class="pub-venue">Conference of the European Chapter of the Association for Computational Linguistics (EACL).</span>
         <span class="pub-badge dataset">Dataset</span>
         <div class="pub-links">
           <a href="https://aclanthology.org/2023.eacl-main.183/" target="_blank" rel="noopener">
@@ -56,11 +59,11 @@
         </div>
       </div>
 
-      <div class="pub-item" data-type="conference">
-        <span class="pub-authors"><strong>Barea Sinno</strong>, Bernardo Oviedo, Katherine Atwell, Malihe Alikhani, Junyi Jessy Li</span><br>
-        <span class="pub-title">Political Ideology and Polarization: A Multi-dimensional Approach</span><br>
-        <span class="pub-venue">Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT), 2022.</span>
-        <span class="pub-badge dataset">Dataset</span>
+      <div class="pub-item" data-type="peer-reviewed">
+        <span class="pub-authors"><strong>Sinno, B.</strong>, Oviedo, B., Atwell, K., Alikhani, M., &amp; Li, J. J. (2022).</span><br>
+        <span class="pub-title">Political ideology and polarization of policy positions: A multi-dimensional approach.</span><br>
+        <span class="pub-venue">Conference of the North American Chapter of the Association for Computational Linguistics (NAACL).</span>
+        <span class="pub-badge">First author</span>
         <div class="pub-links">
           <a href="https://aclanthology.org/2022.naacl-main.17/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Paper</a>
@@ -69,39 +72,58 @@
         </div>
       </div>
 
-      <div class="pub-item" data-type="conference">
-        <span class="pub-authors">Shrey Desai, <strong>Barea Sinno</strong>, Alex Rosenfeld, Junyi Jessy Li</span><br>
-        <span class="pub-title">Adaptive Ensembling: Unsupervised Domain Adaptation for Political Document Analysis</span><br>
-        <span class="pub-venue">Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019.</span>
+      <div class="pub-item" data-type="peer-reviewed">
+        <span class="pub-authors">Desai, S., <strong>Sinno, B.</strong>, Rosenfeld, A., &amp; Li, J. J. (2019).</span><br>
+        <span class="pub-title">Adaptive ensembling: Unsupervised domain adaptation for political document analysis.</span><br>
+        <span class="pub-venue">Conference on Empirical Methods in Natural Language Processing (EMNLP).</span>
         <div class="pub-links">
           <a href="https://aclanthology.org/D19-1478/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Paper</a>
         </div>
       </div>
 
-      <!-- ==================== Dissertation / in progress ====================
-           Fill in real titles, coauthors, and target venues, then delete this comment.
-           Add `<span class="pub-badge">Under Review</span>` where appropriate. -->
-      <h2 class="pub-year-heading" data-section="progress">Dissertation Chapters &amp; Work in Progress</h2>
+      <!-- ==================== Manuscripts in preparation ==================== -->
+      <h2 class="pub-year-heading" data-section="in-prep">Manuscripts in Preparation</h2>
+      <p class="note" style="margin-bottom:6px;">All single-authored, 2026; derived from the dissertation's chapters.</p>
 
-      <div class="pub-item" data-type="progress">
-        <span class="pub-authors"><strong>Barea Sinno</strong></span><br>
-        <span class="pub-title">Measuring Affective Polarization from Open-Ended Survey Responses</span><br>
-        <span class="pub-venue">Dissertation chapter. ANES likes/dislikes responses scored with GPT-4 and validated against feeling-thermometer ratings.</span>
-        <div class="pub-links">
-          <a href="https://github.com/bsinno1/barea-dissertation" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>Code</a>
-        </div>
+      <div class="pub-item" data-type="in-prep">
+        <span class="pub-title">Measuring Partisan Affect Over Time with Constrained LLMs</span><br>
+        <span class="pub-venue">10,759 scored observations (6,336 respondents, ANES 1984&ndash;2020), validated against feeling-thermometer baselines.</span>
       </div>
 
-      <div class="pub-item" data-type="progress">
-        <span class="pub-authors"><strong>Barea Sinno</strong></span><br>
-        <span class="pub-title">Ideology in the Most Important Problem: Annotation and LLM-Assisted Scaling</span><br>
-        <span class="pub-venue">Dissertation chapter. Expert annotation of ANES most-important-problem responses combined with GPT-4 classification.</span>
-        <div class="pub-links">
-          <a href="https://github.com/bsinno1/barea-dissertation" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>Code</a>
-        </div>
+      <div class="pub-item" data-type="in-prep">
+        <span class="pub-title">Frame-Grounded Measurement of National Economic Ideology with Constrained LLMs</span><br>
+        <span class="pub-venue">GPT-4 as third rater, 7 dimensions; Cohen's &kappa; 0.64&ndash;0.81, Fleiss' &kappa; 0.71&ndash;0.78.</span>
+      </div>
+
+      <div class="pub-item" data-type="in-prep">
+        <span class="pub-title">Automating Measurement and Validation: A Self-Validating Text-to-Measurement Instrument</span><br>
+        <span class="pub-venue">Falsifiable verdicts against blinded exogenous gold.</span>
+      </div>
+
+      <div class="pub-item" data-type="in-prep">
+        <span class="pub-title">From Survey Text to Floor Speech: Cross-Domain Generalization of a Constrained-LLM Instrument</span>
+      </div>
+
+      <!-- ==================== Book reviews ==================== -->
+      <h2 class="pub-year-heading" data-section="review">Book Reviews</h2>
+
+      <div class="pub-item" data-type="review">
+        <span class="pub-authors"><strong>Sinno, B. M.</strong> (2016).</span><br>
+        <span class="pub-title">Review of <em>Compassionate Communalism: Welfare and Sectarianism in Lebanon</em>, by Melani Cammett.</span>
+      </div>
+
+      <div class="pub-item" data-type="review">
+        <span class="pub-authors"><strong>Sinno, B.</strong> (2015).</span><br>
+        <span class="pub-title">Review of <em>Recalling the Caliphate: Decolonization and World Order</em>, by Salman Sayyid.</span>
+      </div>
+
+      <!-- ==================== Contributed volume ==================== -->
+      <h2 class="pub-year-heading" data-section="peer-reviewed">Contributed Volume</h2>
+
+      <div class="pub-item" data-type="peer-reviewed">
+        <span class="pub-title">Peacemakers in Action: Profiles in Religious Peacebuilding</span><br>
+        <span class="pub-venue">Cambridge University Press, 2016 &mdash; contributing researcher on multiple chapters, Tanenbaum Center for Interreligious Understanding.</span>
       </div>
 
     </div>
@@ -130,6 +152,10 @@
           var show = filter === 'all' || heading.dataset.section === filter;
           heading.style.display = show ? '' : 'none';
         });
+
+        // The "in preparation" note belongs to that section only.
+        var prepNote = document.querySelector('.pub-year-heading[data-section="in-prep"] + .note');
+        if (prepNote) prepNote.style.display = (filter === 'all' || filter === 'in-prep') ? '' : 'none';
       });
     });
   </script>
