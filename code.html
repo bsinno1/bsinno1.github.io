@@ -103,10 +103,20 @@
         <div class="repo-head">
           <a class="repo-name" href="https://github.com/bsinno1/adaptive-ensembling" target="_blank" rel="noopener">adaptive-ensembling</a>
           <span class="repo-tag">Fork</span>
+          <span class="repo-tag">Dataset</span>
         </div>
-        <p style="margin-bottom:0;">
+        <p style="margin-bottom:8px;">
           Code and datasets for "Adaptive ensembling: Unsupervised domain adaptation for political
           document analysis" (EMNLP 2019).
+        </p>
+        <p style="margin-bottom:0;">
+          The release includes our <strong>COCA political-category annotations</strong>:
+          <code>datasets/coca_train.csv</code> and <code>coca_test.csv</code> label each document for
+          American Government, Political Economy, and International Relations (a document with no
+          positive label is non-political), and <code>coca_politics.txt</code> lists the document
+          identifiers our domain-adaptation framework labels political. Annotations are keyed to
+          <a href="https://www.english-corpora.org/coca/" target="_blank" rel="noopener">COCA</a>
+          document IDs rather than shipping the source text, so COCA access is needed to join them.
         </p>
         <div class="repo-meta">
           <span>Upstream: <a href="https://github.com/shreydesai/adaptive-ensembling" target="_blank" rel="noopener">shreydesai/adaptive-ensembling</a></span>
