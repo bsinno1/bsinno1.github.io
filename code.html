@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code &middot; Barea M. Sinno</title>
+  <meta name="description" content="Public code and data releases — measurement instruments, reliability harnesses, and paper replication material.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-name">Barea M. Sinno</a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="code.html" class="active">Code</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="awards.html">Awards</a>
+        <a href="service.html">Service</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-body">
+    <div class="container">
+      <h1 class="section-title page-title">Code &amp; Data</h1>
+      <p class="note" style="margin-bottom:24px;">
+        Everything below is on <a href="https://github.com/bsinno1" target="_blank" rel="noopener">github.com/bsinno1</a>.
+        My instruments are meant to be run, not just cited &mdash; pipelines are seeded and reproducible, and
+        releases are code-only where the underlying data is restricted.
+      </p>
+
+      <!-- ==================== Instruments ==================== -->
+      <h2 class="subhead">Measurement Instruments</h2>
+
+      <div class="card repo-card">
+        <div class="repo-head">
+          <a class="repo-name" href="https://github.com/bsinno1/open-weight-eval-reliability-harness" target="_blank" rel="noopener">open-weight-eval-reliability-harness</a>
+          <span class="repo-tag">MIT</span>
+        </div>
+        <p style="margin-bottom:0;">
+          Measurement-science harness for LLM evaluation reliability: the noise floor of temperature-0
+          evaluation on open-weight models, with per-knob attribution mapped to EU AI Act Art. 15 and
+          NIST AI RMF MEASURE 2/3. Frozen hash-verified probe set, hypotheses hashed before any run,
+          five to ten replications per configuration. Every replication came back bit-for-bit identical;
+          variance lives between configurations, not within them.
+        </p>
+        <div class="repo-meta">
+          <span class="repo-lang">Python</span>
+          <span>Behavioral layer of the <a href="research.html">open-model certification work</a></span>
+        </div>
+      </div>
+
+      <div class="card repo-card">
+        <div class="repo-head">
+          <a class="repo-name" href="https://github.com/bsinno1/barea-dissertation" target="_blank" rel="noopener">barea-dissertation</a>
+          <span class="repo-tag">Code only</span>
+        </div>
+        <p style="margin-bottom:0;">
+          Prompting and analysis pipelines for the dissertation's two measurement chapters &mdash; partisan
+          affect and national economic ideology on ANES survey text, 1984&ndash;2020. Released code-only and
+          key-free: the ANES data is not redistributed here, and no API credentials appear in the tree or
+          its history.
+        </p>
+        <div class="repo-meta">
+          <span class="repo-lang">Jupyter Notebook</span>
+          <span>Accompanies <a href="research.html">the dissertation</a></span>
+        </div>
+      </div>
+
+      <!-- ==================== Paper replication ==================== -->
+      <h2 class="subhead">Paper Replication Material</h2>
+      <p class="note" style="margin-bottom:14px;">
+        Coauthored papers &mdash; the canonical repositories are maintained by my collaborators; my copies
+        are forks.
+      </p>
+
+      <div class="card repo-card">
+        <div class="repo-head">
+          <a class="repo-name" href="https://github.com/bsinno1/political-polarization-NAACL" target="_blank" rel="noopener">political-polarization-NAACL</a>
+          <span class="repo-tag">Fork</span>
+        </div>
+        <p style="margin-bottom:0;">
+          Code and annotated corpus for "Political ideology and polarization of policy positions: A
+          multi-dimensional approach" (NAACL 2022) &mdash; the first diachronic dataset of news articles
+          annotated at paragraph level for ideology by trained political scientists and linguists.
+        </p>
+        <div class="repo-meta">
+          <span>Upstream: <a href="https://github.com/bernovie/political-polarization" target="_blank" rel="noopener">bernovie/political-polarization</a></span>
+          <span><a href="https://aclanthology.org/2022.naacl-main.17/" target="_blank" rel="noopener">Paper</a></span>
+        </div>
+      </div>
+
+      <div class="card repo-card">
+        <div class="repo-head">
+          <a class="repo-name" href="https://github.com/bsinno1/adaptive-ensembling" target="_blank" rel="noopener">adaptive-ensembling</a>
+          <span class="repo-tag">Fork</span>
+        </div>
+        <p style="margin-bottom:0;">
+          Code and datasets for "Adaptive ensembling: Unsupervised domain adaptation for political
+          document analysis" (EMNLP 2019).
+        </p>
+        <div class="repo-meta">
+          <span>Upstream: <a href="https://github.com/shreydesai/adaptive-ensembling" target="_blank" rel="noopener">shreydesai/adaptive-ensembling</a></span>
+          <span><a href="https://aclanthology.org/D19-1478/" target="_blank" rel="noopener">Paper</a></span>
+        </div>
+      </div>
+
+      <!-- ==================== Tooling ==================== -->
+      <h2 class="subhead">Tooling</h2>
+
+      <div class="card repo-card">
+        <div class="repo-head">
+          <a class="repo-name" href="https://github.com/bsinno1/congressional-record" target="_blank" rel="noopener">congressional-record</a>
+          <span class="repo-tag">Fork</span>
+        </div>
+        <p style="margin-bottom:0;">
+          Parser for the Congressional Record, used to build the floor-speech corpus that the MEV
+          instrument is deployed onto beyond its native survey domain.
+        </p>
+        <div class="repo-meta">
+          <span>Upstream: <a href="https://github.com/unitedstates/congressional-record" target="_blank" rel="noopener">unitedstates/congressional-record</a></span>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:24px;">
+        Work in progress &mdash; cross-architecture reliability certification, the mechanistic decoding
+        instrument, and the self-validating text-to-measurement tool &mdash; is described on the
+        <a href="research.html">research page</a> and will be released as each is certified.
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 Barea M. Sinno
+  </footer>
+</body>
+</html>

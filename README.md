@@ -9,6 +9,7 @@ no build step, no dependencies. Edit the HTML directly and push.
 index.html            Home — bio, fields & methods, news, selected publications, education, misc
 research.html         Research agenda, dissertation, fields & methods, research experience
 publications.html     Peer-reviewed / in preparation / book reviews, with filter buttons
+code.html             Public repositories — instruments, paper replication material, tooling
 teaching.html         Teaching by institution + courses prepared to teach
 awards.html           Awards, fellowships, research funding
 service.html          Academic, community & professional service; languages & citizenship
@@ -52,7 +53,7 @@ git push -u origin master
 - **Colors** — change `--primary`, `--accent`, and `--accent-light` in `assets/css/style.css`.
   Everything else derives from those three.
 - **Navigation** — the nav block is duplicated in each HTML file. If you add or rename a page,
-  update all six, and move the `class="active"` marker to the current page.
+  update all seven, and move the `class="active"` marker to the current page.
 - **News** — newest entry first; each `<li>` is a `.news-date` span followed by a content span.
 - **Publications** — the filter buttons match `data-filter` on the button against `data-type` on
   each `.pub-item` and `data-section` on each `.pub-year-heading`. Keep those attributes in sync
