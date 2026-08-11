@@ -318,6 +318,38 @@ section { margin-bottom: 40px; }
 }
 .finding strong { color: var(--primary); }
 
+/* run-grid table */
+.runtable-wrap { overflow-x: auto; margin: 12px 0 0; }
+.runtable {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 460px;
+  font-size: 0.86rem;
+}
+.runtable th, .runtable td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+.runtable thead th {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--accent-light);
+}
+.runtable tbody th { font-weight: 500; color: var(--text); }
+.runtable td { color: var(--text-light); }
+.runtable td.sel {
+  color: var(--primary);
+  font-weight: 600;
+  background: var(--accent-light);
+  border-radius: 3px;
+}
+.runtable tr:last-child th, .runtable tr:last-child td { border-bottom: none; }
+
 /* reserved figure slot */
 .figure-slot {
   margin: 14px 0 0;

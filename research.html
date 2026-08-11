@@ -161,6 +161,34 @@
               <strong>0.74</strong> certification score ever flagged.
             </div>
           </div>
+            <p style="margin-bottom:0; margin-top:12px;">
+              <strong>The sweep.</strong> Twelve runs &mdash; two models &times; three LoRA ranks &times; two
+              learning rates, all on the full training set (7,914 units, bf16). Selection was
+              <strong>sealed before the read</strong>, made on validation fidelity alone with the criterion
+              untouched.
+            </p>
+            <div class="runtable-wrap">
+              <table class="runtable">
+                <thead>
+                  <tr><th>Model &middot; learning rate</th><th>rank 8</th><th>rank 16</th><th>rank 32</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>Qwen2.5-7B &middot; 1e-4</th><td>ran</td><td>ran</td><td>ran</td></tr>
+                  <tr><th>Qwen2.5-7B &middot; 2e-4</th><td>ran</td><td>ran</td><td class="sel">selected &mdash; val <em>r</em> 0.7685</td></tr>
+                  <tr><th>Mistral-7B &middot; 1e-4</th><td>ran</td><td>ran</td><td>ran</td></tr>
+                  <tr><th>Mistral-7B &middot; 2e-4</th><td class="sel">selected &mdash; val <em>r</em> 0.7692</td><td>ran</td><td>ran</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-bottom:0; margin-top:10px;">
+              Every cell in the sweep landed within nine thousandths of every other &mdash; validation band
+              <strong><em>r</em> = 0.760&ndash;0.769</strong> across all twelve, zero parse failures over roughly
+              22,000 generations. That forecloses the obvious objection: the copies were as good as this recipe
+              gets, and still lost the criterion. Against the teacher's slope of <strong>0.711</strong>
+              (<em>r</em> 0.696), the two selected finals read <strong>0.557</strong> (<em>r</em> 0.540) and
+              <strong>0.560</strong> (<em>r</em> 0.546) &mdash; while their test fidelity, 0.741 and 0.742,
+              flagged nothing.
+            </p>
           <ul class="project-facts">
             <li><span class="k">Design</span><span class="v">Hash-chained preregistration; held-out feeling-thermometer criterion; two open-weight replicas of a human-validated teacher</span></li>
             <li><span class="k">Code</span><span class="v"><span class="muted">Preregistration chain, decision logs, and results share one repository with <em>Validity versus Agreement</em>. Public companion in preparation &mdash; code, registrations, and charts, without respondent data.</span></span></li>
