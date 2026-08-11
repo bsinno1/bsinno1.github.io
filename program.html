@@ -53,11 +53,42 @@
           routinely does &mdash; then whether validity survives the copy is an empirical question, and
           whether agreement with a validated teacher is even the right evidence is a prior one.
         </p>
-        <p style="margin-bottom:0;">
+        <p style="margin-bottom:14px;">
           The common thread is that a measurement claim has to be earned. What makes an AI-generated
           number trustworthy is not the model that produced it but the apparatus around it: a criterion
           external to the model, a validation that could have failed, and a record showing it was not
           rewritten after the fact.
+        </p>
+        <p style="margin-bottom:14px;">
+          How much of that apparatus is available depends on how much of the model you can see. Three
+          regimes, three different questions:
+        </p>
+        <div class="card">
+          <ul class="project-facts">
+            <li>
+              <span class="k">Black box</span>
+              <span class="v"><strong>Is the score valid?</strong> A closed model reached only through its
+              outputs. Nothing inside can be inspected, so the evidence has to come from outside &mdash; a
+              criterion the model never saw, checked at the boundary.</span>
+            </li>
+            <li>
+              <span class="k">White box</span>
+              <span class="v"><strong>Is the score stable?</strong> Open weights and full control of the
+              execution stack. Every knob is settable, so whether identical configuration yields identical
+              output stops being an assumption and becomes a measurement.</span>
+            </li>
+            <li>
+              <span class="k">Glass box</span>
+              <span class="v"><strong>Can the internal signal be trusted?</strong> The computation itself is
+              visible &mdash; per-layer trajectories, attention, the path to an answer. A score certified at the
+              surface still says nothing about how it was arrived at.</span>
+            </li>
+          </ul>
+        </div>
+        <p style="margin-bottom:0;">
+          The dissertation and its automation work in the black box. Certification of the evaluation stack
+          works in the white and glass boxes. The judge studies cross between them: a black-box teacher
+          copied into white-box students, asking what survives the crossing.
         </p>
       </section>
 
@@ -242,7 +273,7 @@
           <p class="project-question">Is the score stable, and can the model's internal signal be trusted &mdash; before any judge built on it is validated at all?</p>
           <div class="project-body">
             <p style="margin-bottom:10px;">
-              <em>Behavioral layer &mdash; is the score stable?</em>
+              <strong>White box</strong> &mdash; <em>is the score stable?</em> Weights and configuration in hand, the whole stack is controllable, so reproducibility becomes testable rather than assumed.
               A purpose-built reliability harness &mdash; when the measurement layer is itself the object of
               study, the instrument cannot inherit untested machinery &mdash; testing whether identically
               configured temperature-0 evaluation ever disagrees with itself. Qwen2.5-0.5B and SmolLM2-360M,
@@ -259,7 +290,7 @@
               change.
             </div>
             <p style="margin-bottom:0; margin-top:12px;">
-              <em>Mechanistic layer &mdash; can the internal signal be trusted?</em>
+              <strong>Glass box</strong> &mdash; <em>can the internal signal be trusted?</em> Behaviour certified at the surface says nothing about what the model computed on the way there.
               A decoding instrument exposing per-layer internals over a single cached forward pass, evaluated
               on LAMBADA &mdash; logit-lens trajectories, per-head attention maps, a temperature-controlled beam
               tree &mdash; subjecting internal signals to the same standard as any score, and gating pass/fail
