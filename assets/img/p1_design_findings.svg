@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Calibri, 'Segoe UI', sans-serif">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <text x="80" y="52" font-size="13" letter-spacing="2.5" fill="#6B7780" font-weight="600">PROJECT 1 &#183; DISTILLED-JUDGE VALIDITY TRANSFER &#183; SEALED CHAIN v1&#8594;v4</text>
+  <text x="80" y="96" font-family="Cambria, Georgia, serif" font-size="34" fill="#24303A" font-weight="700">The copy kept the answers. It did not keep the validity.</text>
+
+  <!-- ============ PANEL A: DESIGN ============ -->
+  <rect x="80" y="120" width="530" height="440" rx="10" fill="#FAFBFB" stroke="#D8DCDE" stroke-width="1.5"/>
+  <text x="104" y="152" font-size="14" letter-spacing="1.5" fill="#3F6E68" font-weight="700">THE DESIGN</text>
+
+  <g font-size="13" fill="#24303A">
+    <text x="104" y="180" font-weight="700" letter-spacing="1" font-size="12.5" fill="#6B7780">PURPOSE</text>
+    <text x="104" y="199">Does a copy of a validated judge keep the <tspan font-weight="700">validity</tspan> &#8212; or only</text>
+    <text x="104" y="217">the <tspan font-weight="700">answers</tspan>? One copy, taken back to the world.</text>
+
+    <text x="104" y="247" font-weight="700" letter-spacing="1" font-size="12.5" fill="#6B7780">TRAINING PAIRS &#8212; one per respondent &#215; party</text>
+    <text x="104" y="266"><tspan font-weight="700">input:</tspan> the respondent&#8217;s own words &#8212; ANES open-ended answers to</text>
+    <text x="104" y="284">&#8220;What do you <tspan font-style="italic">like / dislike</tspan> about the [Democratic / Republican]</text>
+    <text x="104" y="302">party?&#8221; &#8212; temporal text spanning <tspan font-weight="700">1984&#8211;2020</tspan></text>
+    <text x="104" y="320"><tspan font-weight="700">target:</tspan> the 0&#8211;100 affect score <tspan font-weight="700">GPT-4 assigned that answer in 2023</tspan></text>
+    <text x="104" y="338">9,857 pairs &#183; split by respondent: 7,914 train &#183; 935 val &#183; 1,008 test</text>
+
+    <text x="104" y="368" font-weight="700" letter-spacing="1" font-size="12.5" fill="#6B7780">STUDENTS &amp; ENGINE</text>
+    <text x="104" y="387">Qwen2.5-7B-Instruct &#183; Mistral-7B-Instruct-v0.3 (revision-pinned)</text>
+    <text x="104" y="405">LoRA rank {8,16,32} &#215; lr {1e-4, 2e-4}, bf16 &#183; PyTorch + PEFT,</text>
+    <text x="104" y="423">A100s via SLURM &#183; teacher-verbatim prompts &amp; exemplars &#183;</text>
+    <text x="104" y="441">temperature 0 &#183; the teacher&#8217;s own output parser, unmodified</text>
+
+    <text x="104" y="471" font-weight="700" letter-spacing="1" font-size="12.5" fill="#6B7780">DISCIPLINE</text>
+    <text x="104" y="490">prereg sealed before training &#183; selection blind to the criterion &#183;</text>
+    <text x="104" y="508">students frozen, then one criterion read &#8212; struck (scrambled</text>
+    <text x="104" y="526">column, caught by audit), re-run on the CDF-verified criterion (v4)</text>
+  </g>
+  <text x="104" y="548" font-size="12" fill="#6B7780" font-style="italic">Every artifact hashed; every verdict mechanical; one strike on the record.</text>
+
+  <!-- ============ PANEL B: FINDINGS ============ -->
+  <rect x="650" y="120" width="550" height="440" rx="10" fill="#FAFBFB" stroke="#D8DCDE" stroke-width="1.5"/>
+  <text x="674" y="152" font-size="14" letter-spacing="1.5" fill="#C25E00" font-weight="700">THE FINDINGS &#183; v4, VERIFIED CRITERION, 1,002 UNITS</text>
+
+  <!-- bar chart: slope vs the world -->
+  <text x="674" y="182" font-size="12.5" fill="#6B7780">Slope against the world (held-out thermometers, identical units)</text>
+  <g font-size="13">
+    <text x="770" y="212" fill="#24303A" text-anchor="end">teacher</text>
+    <rect x="784" y="199" width="356" height="17" rx="3" fill="#3F6E68"/>
+    <text x="1148" y="212" fill="#24303A" font-weight="700">0.711</text>
+
+    <text x="770" y="242" fill="#24303A" text-anchor="end">Qwen copy</text>
+    <rect x="784" y="229" width="279" height="17" rx="3" fill="#C6D6D1"/>
+    <text x="1071" y="242" fill="#24303A" font-weight="700">0.557</text>
+
+    <text x="770" y="272" fill="#24303A" text-anchor="end">Mistral copy</text>
+    <rect x="784" y="259" width="281" height="17" rx="3" fill="#C6D6D1"/>
+    <text x="1073" y="272" fill="#24303A" font-weight="700">0.560</text>
+  </g>
+  <line x1="1140" y1="192" x2="1140" y2="282" stroke="#3F6E68" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="674" y="304" font-size="12" fill="#6B7780" font-style="italic">the certificate read 0.74 for both copies &#8212; and flagged nothing</text>
+
+  <g font-size="13.5" fill="#24303A">
+    <text x="674" y="340" font-weight="700" font-size="12.5" letter-spacing="1" fill="#6B7780">VERDICTS, MECHANICAL</text>
+    <text x="674" y="360">H1 &#8212; validity transfer: <tspan font-weight="700" fill="#C25E00">FALSIFIED, downward</tspan> (&#8722;0.15 both</text>
+    <text x="674" y="378">students; both sealed clauses fired; families agree to 3 decimals)</text>
+    <text x="674" y="402">H3 &#8212; party invariance: <tspan font-weight="700" fill="#C25E00">FALSIFIED</tspan> &#8212; copies acquired a party</text>
+    <text x="674" y="420">asymmetry the teacher never had (gap 0.23 / 0.19 vs 0.02)</text>
+    <text x="674" y="444">H2 &#8212; fidelity 0.74: mid-band; dissociation unavailable, as sealed</text>
+    <text x="674" y="468">Reliability: <tspan font-weight="700">0 parse failures in ~24,000 generations</tspan></text>
+    <text x="674" y="492">Teacher: <tspan font-weight="700" fill="#3F6E68">replicated out-of-sample, under seal</tspan> (0.71; published 0.75)</text>
+  </g>
+  <text x="674" y="530" font-size="12" fill="#6B7780" font-style="italic">Statistics: OLS slope + Pearson r, cluster bootstrap over respondents,</text>
+  <text x="674" y="546" font-size="12" fill="#6B7780" font-style="italic">2,000 replicates, seed 42 &#183; tolerances sealed before any result existed</text>
+
+  <!-- verdict band -->
+  <rect x="80" y="584" width="1120" height="56" rx="8" fill="#24303A"/>
+  <text x="640" y="619" font-size="18" fill="#FFFFFF" text-anchor="middle" font-family="Cambria, Georgia, serif" font-weight="700">The certificate said both copies were fine. The world said they lost a fifth of the slope and gained a bias. Agreement flagged neither.</text>
+
+  <text x="640" y="678" font-size="12.5" fill="#6B7780" text-anchor="middle">All numbers manifest-verified &#183; chain v1&#8594;v4, hashes on the record &#183; interpretation of mechanism deliberately withheld pending Project 2</text>
+</svg>
