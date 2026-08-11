@@ -230,6 +230,52 @@
             <li><span class="k">Code</span><span class="v"><span class="muted">Shares the repository and preregistration lineage of <em>Distilled-Judge Validity Transfer</em>. Public companion in preparation.</span></span></li>
           </ul>
         </div>
+
+        <!-- Project 5 -->
+        <p class="arc-intro" style="margin-top:26px;">
+          Both judge studies assume something they do not test: that the evaluation machinery underneath them
+          is stable enough to measure with. That assumption is its own project.
+        </p>
+
+        <div class="card project">
+          <div class="project-head">
+            <span class="project-title">Certifying the Evaluation Stack</span>
+            <span class="status status--reported">Reported</span>
+          </div>
+          <p class="project-question">Is the score stable, and can the model's internal signal be trusted &mdash; before any judge built on it is validated at all?</p>
+          <div class="project-body">
+            <p style="margin-bottom:10px;">
+              <em>Behavioral layer &mdash; is the score stable?</em>
+              A purpose-built reliability harness &mdash; when the measurement layer is itself the object of
+              study, the instrument cannot inherit untested machinery &mdash; testing whether identically
+              configured temperature-0 evaluation ever disagrees with itself. Qwen2.5-0.5B and SmolLM2-360M,
+              a frozen hash-verified 100-prompt probe set, five to ten replications per configuration (more
+              than two dozen hash-verified runs), spanning CPU/GPU execution, precision formats, batching,
+              threading, autotuned kernels, and 2-/4-way tensor-parallel inference on a pinned NVIDIA A100,
+              with hypotheses hashed before any run.
+            </p>
+            <div class="finding">
+              Every replication was <strong>bit-for-bit identical</strong>. Variance appears only
+              <em>between</em> configurations, spanning four orders of magnitude with precision format
+              dominant &mdash; locating evaluation variance in configuration and version change rather than in
+              the models themselves. The bitwise-zero baseline doubles as a tripwire for silent environment
+              change.
+            </div>
+            <p style="margin-bottom:0; margin-top:12px;">
+              <em>Mechanistic layer &mdash; can the internal signal be trusted?</em>
+              A decoding instrument exposing per-layer internals over a single cached forward pass, evaluated
+              on LAMBADA &mdash; logit-lens trajectories, per-head attention maps, a temperature-controlled beam
+              tree &mdash; subjecting internal signals to the same standard as any score, and gating pass/fail
+              verdicts into the same hashed attestation records as the behavioral certification.
+            </p>
+          </div>
+          <ul class="project-facts">
+            <li><span class="k">Precondition</span><span class="v">Underwrites <em>Distilled-Judge Validity Transfer</em> and <em>Validity versus Agreement</em> &mdash; a judge cannot be certified on machinery that has not been</span></li>
+            <li><span class="k">Standards</span><span class="v">Per-knob attribution mapped to EU AI Act Art. 15 and NIST AI RMF MEASURE 2/3</span></li>
+            <li><span class="k">Continuing</span><span class="v">Cross-architecture certification; conformal calibration of the mechanistic layer</span></li>
+            <li><span class="k">Code</span><span class="v"><a href="https://github.com/bsinno1/open-weight-eval-reliability-harness" target="_blank" rel="noopener">open-weight-eval-reliability-harness</a> &mdash; public, MIT. See also the <a href="code.html">implementation view</a>.</span></li>
+          </ul>
+        </div>
       </section>
 
       <!-- ==================== Foundation ==================== -->
