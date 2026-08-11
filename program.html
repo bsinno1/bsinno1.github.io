@@ -202,12 +202,20 @@
           </div>
           <p class="project-question">Is agreement with a validated teacher a sufficient statistic for validity &mdash; or is model-against-model validation circular?</p>
           <div class="project-body">
+            <p style="margin-bottom:10px;">
+              A 29-judge ladder trained run-by-run under experimenter control &mdash; two model families, three
+              sizes, three data doses, mid-training snapshots, and a scrambled-label control &mdash; spanning the
+              range from close imitation of the teacher to substantial divergence, with each judge scored on
+              both axes: agreement with the teacher, and validity against the held-out human criterion. If
+              agreement were a sufficient statistic for criterion validity, the two would track each other
+              along the ladder.
+            </p>
             <p style="margin-bottom:0;">
-              A 29-judge ladder built under run-by-run experimenter-controlled fine-tuning, spanning the range
-              from close imitation of the teacher to substantial divergence, with each judge scored on both
-              axes: agreement with the teacher, and validity against the held-out human criterion. If agreement
-              were a sufficient statistic, the two would track each other along the ladder. The study is
-              designed so that the answer can come out either way and be recognised as such.
+              The apparatus is the point. A <strong>sealed single-read design</strong>: the criterion is
+              air-gapped, the decision log is append-only, and control gates bind the experimenter before any
+              result is seen. The study is built so the answer can come out either way and be recognised as
+              such &mdash; and so that no one, including me, can quietly decide afterwards which way it came out.
+              The judges demonstrate the method; the audit regime is the contribution.
             </p>
             <div class="figure-slot">
               Figure &mdash; agreement and validity across the 29-judge ladder.<br>
@@ -216,7 +224,8 @@
           </div>
           <ul class="project-facts">
             <li><span class="k">Extends</span><span class="v"><em>Distilled-Judge Validity Transfer</em>, under the same preregistration lineage</span></li>
-            <li><span class="k">Design</span><span class="v">29-judge ladder; run-by-run experimenter-controlled fine-tuning; sealed read against a held-out criterion</span></li>
+            <li><span class="k">Design</span><span class="v">29-judge ladder; two model families &times; three sizes &times; three data doses, with mid-training snapshots and a scrambled-label control</span></li>
+            <li><span class="k">Apparatus</span><span class="v">Sealed single read; air-gapped criterion; append-only decision log; control gates binding before results are seen</span></li>
             <li><span class="k">Status</span><span class="v">Read executed; verdicts held under the study's own preregistered control-gate rules; adjudication by hash-chained amendment</span></li>
             <li><span class="k">Code</span><span class="v"><span class="muted">Shares the repository and preregistration lineage of <em>Distilled-Judge Validity Transfer</em>. Public companion in preparation.</span></span></li>
           </ul>
