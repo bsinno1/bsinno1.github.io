@@ -36,26 +36,14 @@
       <section>
         <h1 class="section-title page-title">Research Agenda</h1>
         <p style="margin-bottom:14px;">
-          I study measurement: whether the instruments social science increasingly relies on &mdash; large
-          language models used to score political text &mdash; actually measure what they claim to, with what
-          reliability, and under what conditions their scores can legitimately be compared across time and
-          settings. My dissertation develops the <strong>Measurement, Evaluation and Validation (MEV)</strong>
-          framework, which treats constrained LLM evaluators as scientific instruments whose validity,
-          reliability, and comparability must be demonstrated rather than assumed.
-        </p>
-        <p style="margin-bottom:14px;">
-          Current work extends that discipline to AI evaluation itself. How much of a measurement claim can be
-          checked depends on how much of the model is visible, so the questions change with the regime: whether
-          a score is <em>valid</em> when only outputs can be seen, whether it is <em>stable</em> when the whole
-          stack is controllable, and whether the <em>internal signal</em> deserves trust when the computation
-          is exposed.
+          <strong>I rate the rater.</strong> Closed or open, an evaluator is an instrument: its validity has to
+          be established before any score it produces can be attributed to anything. I define the measurement
+          standard, determine what evidence is sufficient to trust the result, and direct the engineering
+          required to make that evidence observable.
         </p>
         <p style="margin-bottom:0;">
-          The agenda's aim is a general statistical framework for quantifying evaluator uncertainty across
-          both open-weight and proprietary-model regimes, with reporting standards that let researchers state
-          how much confidence an AI-generated measurement deserves. Substantive applications center on
-          political language over time &mdash; partisan affect, ideology, and legislative speech &mdash; across
-          comparative and international contexts.
+          The result is evaluation infrastructure that can separate model behaviour from evaluator and stack
+          effects, establish reliability floors, and turn reported deltas into defensible measurements.
         </p>
       </section>
 
@@ -69,144 +57,69 @@
             Committee: Beth Leech (chair) &middot; Junyi Jessy Li (Linguistics, UT Austin) &middot; Richard Lau (political psychology) &middot; Jan Kubik (interpretive methods)</span>
           </p>
           <p style="margin-bottom:10px;">
-            The dissertation develops the Measurement, Evaluation, and Validation (MEV) framework for
-            measuring latent political concepts &mdash; partisan affect, national economic ideology &mdash; in text
-            spanning several decades, where the meaning of the concepts themselves drifts. Constrained large
-            language models (fixed output space with human-in-the-loop validation, temperature-0 inference,
-            era-grounded exemplars) serve as the measurement instruments; the constraints support
-            reproducibility and limit annotation, prompt, and automation bias.
+            Designed the <strong>Measurement, Evaluation &amp; Validation (MEV)</strong> framework &mdash; each of
+            the three established separately &mdash; for measuring affect and economic ideology across
+            <strong>36 years of text</strong>, where drift in language and meaning is a background condition
+            rather than an anomaly to detect.
+          </p>
+          <p style="margin-bottom:10px;">
+            Qualified a closed API model as a measuring instrument with <strong>no weights and no logits</strong>.
+            Control was exercised entirely at the interface &mdash; fixed output space, temperature 0,
+            era-grounded exemplars, ICL/CoT scaffolding restricting admissible outputs &mdash; and everything
+            else assessed <em>a posteriori</em>, from outputs alone. Contested concepts became scorable measures
+            by building drift into the construct instead of correcting for it downstream: 24 topic frame labels,
+            ordered inference logic, and calibration rules precise enough that an independent annotator working
+            from the written guidelines alone reproduces the assignments.
           </p>
           <p style="margin-bottom:0;">
-            Scores are validated against exogenous benchmarks, and a drift taxonomy (semantic, conceptual,
-            predictive) distinguishes change in a concept from change in the instrument. Analyses cover ANES
-            survey text (1984&ndash;2020) and extend to congressional floor speech, with fully seeded,
-            reproducible pipelines.
+            Two validated time-series datasets came out of it &mdash; <strong>10,759 scored respondent-party
+            observations from 6,336 respondents</strong> for partisan affect, and a frame-grounded economic
+            ideology series &mdash; each checked against its own exogenous ANES benchmark, 1984&ndash;2020. Rater
+            agreement was established before aggregation (Cohen's &kappa; 0.64&ndash;0.81 across annotator and
+            model pairings; Fleiss' &kappa; 0.71&ndash;0.78 across three raters, with GPT-4 executing the same
+            constrained procedure as the human annotators), and the constrained procedure beat a zero-shot
+            baseline in every survey year and for both annotators &mdash; the measurable return on constraining
+            the method. <a href="https://github.com/bsinno1/barea-dissertation" target="_blank" rel="noopener">Code, released measures, and codebook &rarr;</a>
           </p>
         </div>
       </section>
 
-      <!-- Current: the research program -->
+      <!-- Current -->
       <section>
         <h2 class="section-title">Current &mdash; Measurement Science for AI Evaluation</h2>
-
-        <p style="margin-bottom:14px;">
-          A validated instrument raises harder questions than it settles, and the dissertation's result is the
-          starting point for them rather than the conclusion.
-        </p>
-        <p style="margin-bottom:14px;">
-          The program that follows treats the instrument in two ways at once. In one direction it is a
-          <strong>tool to be pushed further</strong>: automated so that validation runs as part of
-          measurement rather than after it, and carried back into decades of survey text that the
-          feeling thermometer never covered. In the other it is an <strong>object to be studied</strong>:
-          if the field is going to copy validated judges into smaller open-weight models &mdash; as it now
-          routinely does &mdash; then whether validity survives the copy is an empirical question, and
-          whether agreement with a validated teacher is even the right evidence is a prior one.
-        </p>
-        <p style="margin-bottom:14px;">
-          The common thread is that a measurement claim has to be earned. What makes an AI-generated
-          number trustworthy is not the model that produced it but the apparatus around it: a criterion
-          external to the model, a validation that could have failed, and a record showing it was not
-          rewritten after the fact.
-        </p>
-        <p style="margin-bottom:14px;">
-          How much of that apparatus is available depends on how much of the model you can see. Three
-          regimes, three different questions:
-        </p>
-        <div class="card">
-          <ul class="project-facts">
-            <li>
-              <span class="k">Black box</span>
-              <span class="v"><strong>Is the score valid?</strong> A closed model reached only through its
-              outputs. Nothing inside can be inspected, so the evidence has to come from outside &mdash; a
-              criterion the model never saw, checked at the boundary.</span>
-            </li>
-            <li>
-              <span class="k">White box</span>
-              <span class="v"><strong>Is the score stable?</strong> Open weights and full control of the
-              execution stack. Every knob is settable, so whether identical configuration yields identical
-              output stops being an assumption and becomes a measurement.</span>
-            </li>
-            <li>
-              <span class="k">Glass box</span>
-              <span class="v"><strong>Can the internal signal be trusted?</strong> The computation itself is
-              visible &mdash; per-layer trajectories, attention, the path to an answer. A score certified at the
-              surface still says nothing about how it was arrived at.</span>
-            </li>
-          </ul>
-        </div>
         <p style="margin-bottom:0;">
-          The dissertation and its automation work in the black box. Certification of the evaluation stack
-          works in the white and glass boxes. The judge studies cross between them: a black-box teacher
-          copied into white-box students, asking what survives the crossing.
+          The dissertation qualified one instrument from outside it. The programme runs on two fronts: carrying
+          that instrument into new questions where only outputs are visible, and opening the stack underneath
+          to ask whether a reported number is the model at all.
         </p>
       </section>
 
-      <!-- ==================== Governance ==================== -->
+      <!-- Black box -->
       <section>
-        <h2 class="section-title">How this work is run &mdash; what can an outsider check?</h2>
-        <div class="card card--callout">
-          <p style="margin-bottom:10px;">
-            One regime governs every instrument here. Predictions are sealed before any run &mdash; eighteen
-            hypotheses under named falsification conditions for the reliability harness, SHA-256
-            <strong>hash-chained across eight successive preregistrations</strong>, each version provably
-            containing its predecessor; <strong>six fell</strong>, and the falsifications are published as the
-            findings. The judge ladder is that discipline in its sharpest form: a sealed single-read design
-            with an air-gapped criterion, mechanical verdicts, and control gates that bind the experimenter
-            before results are seen.
-          </p>
-          <p style="margin-bottom:10px;">
-            <strong>Provenance is read from the machine, not from documentation.</strong> Every harness run
-            emits a self-hashing manifest whose condition vector &mdash; precision format, kernels, determinism
-            flags, silicon &mdash; is read back from live system state on every execution: continuous
-            monitoring, not point-in-time certification. Every ruling lands verbatim in an append-only
-            decision log &mdash; the dated, attributed test records EU AI Act Annex IV &sect;2(g) describes,
-            aligned to NIST AI RMF record-keeping.
-          </p>
-          <p style="margin-bottom:0;">
-            The discipline is not decorative. The gates bind before results are seen, which means they can and
-            do block my own headline claims &mdash; a governance apparatus that has never stopped anything is
-            not evidence of anything. MIT-licensed, CI-verified, and built to be re-derivable by an
-            independent party on commodity hardware: the check a second-line reviewer or external auditor
-            could actually run. Seals, receipts, and decision logs are private during IP review &mdash;
-            <a href="mailto:barea.sinno@gmail.com?subject=Harness%20evidence%20access%20request">request access</a>.
-          </p>
-        </div>
-      </section>
-
-      <!-- ==================== Arc 1 ==================== -->
-      <section>
-        <h2 class="section-title">Extending the instrument</h2>
+        <h2 class="section-title">Black box &mdash; validated from outside: is the number real?</h2>
         <div class="arc-intro">
           <p style="margin-bottom:0;">
-            The dissertation's instrument, taken past the conditions it was built for &mdash; first by making
-            validation automatic rather than manual, then by aiming it at survey decades where no
-            thermometer exists to validate against.
+            No weights, no logits, no access to the computation &mdash; the evidence has to come from a criterion
+            the model never saw. The dissertation validated the instrument against ANES feeling thermometers;
+            these carry the same instrument into new questions.
           </p>
         </div>
 
-        <!-- Project 1 -->
         <div class="card project">
           <div class="project-head">
-            <span class="project-title">A Text-to-Measurement Instrument: Automating the MEV Measure</span>
-            <span class="status status--progress">In progress</span>
+            <span class="project-title">Text-to-Measurement Instrument</span>
+            <span class="status status--progress">In progress &middot; 2026</span>
           </div>
-          <p class="project-question">Can measurement and its validation run as one operation, rather than as an analysis followed by a defence of it?</p>
+          <p class="project-question">Can qualification be reproduced for each new construct, rather than rebuilt by hand?</p>
           <div class="project-body">
             <p style="margin-bottom:0;">
-              Turning the dissertation's Measurement, Evaluation and Validation framework into a
-              self-validating text-to-measurement instrument: constrained scoring, a criterion checked as
-              part of the run, and a verdict on the measurement emitted alongside the measurement itself.
-              The aim is an instrument whose output arrives already carrying the evidence for its own
-              trustworthiness.
+              Automating the dissertation's measure&ndash;evaluate&ndash;validate protocol into a general
+              instrument, so that the work of qualifying a measure is performed by the instrument itself each
+              time it is pointed at something new.
             </p>
           </div>
-          <ul class="project-facts">
-            <li><span class="k">Extends</span><span class="v">The dissertation's MEV framework</span></li>
-            <li><span class="k">Assets</span><span class="v"><span class="muted">Code and results maintained separately; details to follow.</span></span></li>
-          </ul>
         </div>
 
-        <!-- Project 2 -->
         <div class="card project">
           <div class="project-head">
             <span class="project-title">Partisan Affect Before the Feeling Thermometer</span>
@@ -214,158 +127,146 @@
           </div>
           <p class="project-question">What can be measured in the decades before the criterion existed?</p>
           <div class="project-body">
-            <p style="margin-bottom:10px;">
-              The feeling thermometer &mdash; the criterion the dissertation validated against &mdash; begins in
-              <strong>1978</strong>. The ANES open-ended like/dislike questions run back to <strong>1952</strong>.
-              Between those two dates lies a quarter-century of Americans describing the parties in their own
-              words, with no scale to anchor them.
-            </p>
             <p style="margin-bottom:0;">
-              This project extends the affect measure toward 1952. The evidentiary situation changes as it goes
-              back: verbatim response text is published from <strong>1984</strong> onward, while 1952&ndash;1980
-              survives as coded mentions rather than the words themselves. What an instrument validated on
-              verbatim text can legitimately claim over coded mentions is the methodological question the
-              project turns on, and the approach for that span is being worked out rather than assumed. The
-              source archive is secured and the pipeline re-established; analysis is underway.
+              The feeling thermometer &mdash; the criterion the dissertation validated against &mdash; begins in
+              <strong>1978</strong>; the ANES open-ended like/dislike questions run back to <strong>1952</strong>.
+              This project extends the affect measure toward 1952, where the evidentiary situation changes as it
+              goes back: verbatim response text is published from <strong>1984</strong> onward, while
+              1952&ndash;1980 survives as coded mentions rather than the words themselves. What an instrument
+              qualified on verbatim text can legitimately claim over coded mentions is the methodological
+              question the project turns on. The source archive is secured and the pipeline re-established.
             </p>
           </div>
           <ul class="project-facts">
-            <li><span class="k">Extends</span><span class="v">The dissertation's affect measure, 1984&ndash;2020</span></li>
-            <li><span class="k">Data</span><span class="v">ANES open-ended like/dislike responses, 1952 onward <span class="muted">&mdash; held in a permanently private archive; contains ANES respondent data</span></span></li>
-            <li><span class="k">Assets</span><span class="v"><span class="muted">Source archive private by necessity. Any public companion will be released separately.</span></span></li>
+            <li><span class="k">Data</span><span class="v">ANES open-ended like/dislike responses, 1952 onward <span class="muted">&mdash; permanently private archive; contains ANES respondent data</span></span></li>
           </ul>
         </div>
-      </section>
 
-      <!-- ==================== Arc 2 ==================== -->
-      <section>
-        <h2 class="section-title">Testing the instrument</h2>
-        <div class="arc-intro">
-          <p>
-            The dissertation validated a GPT-4-based instrument for measuring partisan affect in open-ended
-            ANES text against respondents' own feeling thermometers. These follow-up studies ask what happens
-            when that instrument is copied &mdash; as the field now routinely does &mdash; into open-weight models.
-          </p>
-          <p>
-            The first distilled the judge into Qwen and Mistral under hash-chained preregistration and tested
-            the copies against the same held-out criterion: they agreed with GPT-4 at 0.74 but reached only
-            0.54 validity against respondents, versus the teacher's 0.70 &mdash; a copy inherits a fraction of
-            its teacher's grip on the world, not the grip itself.
-          </p>
-          <p style="margin-bottom:0;">
-            The second built a 29-judge ladder under run-by-run experimenter-controlled fine-tuning to test
-            whether agreement with a teacher is a sufficient statistic for validity at all &mdash; whether the
-            field's standard model-against-model validation is circular.
-          </p>
-        </div>
-
-        <!-- Project 3 -->
         <div class="card project">
           <div class="project-head">
             <span class="project-title">Distilled-Judge Validity Transfer</span>
-            <span class="status status--reported">Reported</span>
+            <span class="status status--reported">Completed &middot; 2026</span>
           </div>
-          <p class="project-question">When a validated judge is distilled into an open-weight model, does its validity come with it?</p>
+          <p class="project-question">Do the cheap judge copies used in production retain the validity of the judge they copy?</p>
           <div class="project-body">
             <p style="margin-bottom:0;">
-              The dissertation's GPT-4 affect judge was distilled into Qwen and Mistral under hash-chained
-              preregistration, and the copies were tested against the same held-out feeling-thermometer
-              criterion as the teacher. Agreement with the teacher and validity against respondents come apart
-              sharply: a copy can imitate the judge closely while measuring the world substantially less well.
+              The first preregistered test of the question. The human-validated GPT-4 instrument &mdash;
+              <strong>9,857 scored responses</strong> &mdash; was extended into two open-weight replicas, and the
+              dissertation's validation replicated out-of-sample at <strong>0.71</strong> against a published
+              0.75.
             </p>
             <div class="finding">
-              Copies agree with GPT-4 at <strong>0.74</strong> but reach only <strong>0.54</strong> validity
-              against respondents, versus the teacher's <strong>0.70</strong>.
-              <br><strong>A copy inherits a fraction of its teacher's validity, not the validity itself.</strong>
+              The copies <strong>lost a fifth of their accuracy</strong>, 0.71 &rarr; <strong>0.56</strong>, and
+              gained a <strong>10-point partisan bias</strong> &mdash; neither of which their
+              <strong>0.74</strong> certification score ever flagged.
             </div>
           </div>
           <ul class="project-facts">
-            <li><span class="k">Extends</span><span class="v">The dissertation's validated GPT-4 affect judge</span></li>
-            <li><span class="k">Design</span><span class="v">Hash-chained preregistration; held-out feeling-thermometer criterion</span></li>
+            <li><span class="k">Design</span><span class="v">Hash-chained preregistration; held-out feeling-thermometer criterion; two open-weight replicas of a human-validated teacher</span></li>
             <li><span class="k">Code</span><span class="v"><span class="muted">Preregistration chain, decision logs, and results share one repository with <em>Validity versus Agreement</em>. Public companion in preparation &mdash; code, registrations, and charts, without respondent data.</span></span></li>
           </ul>
         </div>
 
-        <!-- Project 4 -->
         <div class="card project">
           <div class="project-head">
             <span class="project-title">Validity versus Agreement</span>
-            <span class="status status--progress">In progress</span>
+            <span class="status status--progress">In progress &middot; 2026</span>
           </div>
-          <p class="project-question">Is agreement with a validated teacher a sufficient statistic for validity &mdash; or is model-against-model validation circular?</p>
+          <p class="project-question">Does certification predict validity at all?</p>
           <div class="project-body">
-            <p style="margin-bottom:10px;">
-              A 29-judge ladder trained run-by-run under experimenter control &mdash; two model families, three
-              sizes, three data doses, mid-training snapshots, and a scrambled-label control &mdash; spanning the
-              range from close imitation of the teacher to substantial divergence, with each judge scored on
-              both axes: agreement with the teacher, and validity against the held-out human criterion. If
-              agreement were a sufficient statistic for criterion validity, the two would track each other
-              along the ladder.
-            </p>
             <p style="margin-bottom:0;">
-              The apparatus is the point. A <strong>sealed single-read design</strong>: the criterion is
-              air-gapped, the decision log is append-only, and control gates bind the experimenter before any
-              result is seen. The study is built so the answer can come out either way and be recognised as
-              such &mdash; and so that no one, including me, can quietly decide afterwards which way it came out.
-              The judges demonstrate the method; the audit regime is the contribution.
+              A <strong>thirteen-model ladder</strong> &mdash; 0.5B to 7B, ten varied data conditions &mdash; of
+              judge copies fine-tuned run-by-run under experimenter control, with every training decision logged
+              append-only, unlike the automated grid of the prior study. Validity is sealed behind an air gap
+              until <strong>one blind read</strong> of the human criterion.
             </p>
             <div class="figure-slot">
-              Figure &mdash; agreement and validity across the 29-judge ladder.
+              Figure &mdash; certification score against criterion validity across the ladder.
             </div>
           </div>
           <ul class="project-facts">
             <li><span class="k">Extends</span><span class="v"><em>Distilled-Judge Validity Transfer</em>, under the same preregistration lineage</span></li>
-            <li><span class="k">Design</span><span class="v">29-judge ladder; two model families &times; three sizes &times; three data doses, with mid-training snapshots and a scrambled-label control</span></li>
-            <li><span class="k">Apparatus</span><span class="v">Sealed single read; air-gapped criterion; append-only decision log; control gates binding before results are seen</span></li>
-            <li><span class="k">Code</span><span class="v"><span class="muted">Shares the repository and preregistration lineage of <em>Distilled-Judge Validity Transfer</em>. Public companion in preparation.</span></span></li>
+            <li><span class="k">Apparatus</span><span class="v">Run-by-run experimenter control; append-only training log; air-gapped criterion; a single blind read</span></li>
           </ul>
         </div>
+      </section>
 
-        <!-- Project 5 -->
-        <p class="arc-intro" style="margin-top:26px;">
-          Both judge studies assume something they do not test: that the evaluation machinery underneath them
-          is stable enough to measure with. That assumption is its own project.
-        </p>
+      <!-- Open-weight harness -->
+      <section>
+        <h2 class="section-title">Open-Weight Evaluation Reliability Harness &mdash; validated from inside: model, or stack?</h2>
+        <div class="arc-intro">
+          <p style="margin-bottom:0;">
+            A running prototype that pins every condition of a computation, turns exactly one, and reads the
+            condition vector back from live machine state &mdash; scalable, reusable infrastructure for
+            separating a model delta from a stack effect.
+          </p>
+        </div>
 
         <div class="card project">
           <div class="project-head">
-            <span class="project-title">Certifying the Evaluation Stack</span>
-            <span class="status status--reported">Reported</span>
+            <span class="project-title">White box &mdash; the measuring half</span>
+            <span class="status status--reported">Running prototype</span>
           </div>
-          <p class="project-question">Is the score stable, and can the model's internal signal be trusted &mdash; before any judge built on it is validated at all?</p>
+          <p class="project-question">Does the result hold still?</p>
           <div class="project-body">
             <p style="margin-bottom:10px;">
-              <strong>White box</strong> &mdash; <em>is the score stable?</em> Weights and configuration in hand, the whole stack is controllable, so reproducibility becomes testable rather than assumed.
-              A purpose-built reliability harness &mdash; when the measurement layer is itself the object of
-              study, the instrument cannot inherit untested machinery &mdash; testing whether identically
-              configured temperature-0 evaluation ever disagrees with itself, and pricing every condition
-              that makes it disagree. Four open-weight models (Qwen2.5-0.5B/7B, SmolLM2-360M, Mistral-7B),
-              frozen hash-verified prompt suites, five to ten cold-start replications per configuration
-              &mdash; 108 hash-verified runs &mdash; spanning CPU/GPU execution, precision formats, batching,
-              threading, autotuned kernels, and tensor-parallel inference on pinned NVIDIA A100s, with
-              hypotheses hashed before any run.
+              This answers the question every eval team asks under time pressure: <em>is it the model or the
+              infrastructure?</em> Across a swept grid &mdash; precision, batch size and composition, attention
+              kernel, threading, 1&ndash;4-GPU tensor parallelism &mdash; <strong>precision dominates every
+              infrastructure variable by 10<sup>3</sup>&ndash;10<sup>4</sup></strong>. That yields a
+              <strong>regression threshold</strong>: a delta below it is the serving stack, not the model, and
+              no further investigation is warranted.
+            </p>
+            <p style="margin-bottom:10px;">
+              The precision knob is priced in the unit that actually gets reported &mdash; the declared score.
+              Across a bf16/fp16 MMLU/LAMBADA grid every cell repeats exactly (spread 0.0 over five cold
+              starts), while <strong>dtype alone moves declared MMLU accuracy by up to four points in either
+              direction</strong> (0.230&rarr;0.270; 0.595&rarr;0.560): a delta the size of an advertised model
+              upgrade, produced by numeric format, and invisible to any QA built on repetition.
             </p>
             <div class="finding">
-              Every replication was <strong>bit-for-bit identical</strong>. Variance appears only
-              <em>between</em> configurations, four orders of magnitude apart with precision format dominant
-              &mdash; number format alone moves declared MMLU accuracy by up to four points in either
-              direction, and fp16 silently destroyed 99.5% of one 7B model's token probabilities, perfectly
-              reproducibly, while sparing its equal-sized cross-architecture twin. The bitwise-zero baseline
-              doubles as a tripwire for silent environment change.
+              <strong>The field's assumed temperature-0 noise floor is false.</strong> 108 hash-verified runs
+              &mdash; each a cold start, model reloaded from disk &mdash; returned spread of exactly 0.0,
+              bitwise, across four open-weight models (Qwen2.5-0.5B/7B, SmolLM2-360M, Mistral-7B) from laptop
+              x86 to 4&times;A100. Not blindness: a designed atomics positive control reads 11.75&ndash;13.5
+              with nondeterminism present, and frozen MMLU/LAMBADA accuracies still separate models.
             </div>
             <p style="margin-bottom:0; margin-top:12px;">
-              <strong>Glass box</strong> &mdash; <em>can the internal signal be trusted?</em> Behaviour certified at the surface says nothing about what the model computed on the way there.
-              A decoding instrument exposing per-layer internals over a single cached forward pass, evaluated
-              on LAMBADA &mdash; logit-lens trajectories, per-head attention maps, a temperature-controlled beam
-              tree &mdash; subjecting internal signals to the same standard as any score, and gating pass/fail
-              verdicts into the same hashed attestation records as the behavioral certification.
+              Two further results. <strong>fp16 silently destroyed 99.5% of Qwen-7B's token
+              probabilities</strong> &mdash; exponent-range overflow, diagnosed from per-token evidence &mdash;
+              while sparing equal-sized Mistral-7B, perfectly reproducibly and therefore undetectable by rerun.
+              And the aggregate is not hiding the items: decision-margin structure quantified beneath each
+              declared score (50k generation steps, median top-2 margin 1.4, none within 10<sup>-4</sup> of
+              flipping), which also bounds how much evaluation is needed to separate models.
+            </p>
+          </div>
+        </div>
+
+        <div class="card project">
+          <div class="project-head">
+            <span class="project-title">Glass box &mdash; the proving half</span>
+            <span class="status status--reported">Running prototype</span>
+          </div>
+          <p class="project-question">What can an outsider check?</p>
+          <div class="project-body">
+            <p style="margin-bottom:10px;">
+              Every hypothesis is sealed under a named falsification condition before its runs, SHA-256
+              <strong>hash-chained across eight successive preregistrations</strong>. <strong>Six predictions
+              fell</strong>, and the falsifications are published as the findings &mdash; nothing reinterpreted
+              after data.
+            </p>
+            <p style="margin-bottom:0;">
+              Provenance is read from the machine, not from documentation. Every run emits a self-hashing
+              manifest whose condition vector &mdash; dtype, kernels, TF32, determinism flags, silicon &mdash; is
+              read back from live system state, with per-token evidence in verifiable sidecars
+              (<strong>108/108 verify</strong>); alongside an append-only log of PI rulings D1&ndash;D20 and a
+              full table of reported figures with their conditions. Open source (MIT), CI-verified, pytest,
+              golden datasets under CI regression &mdash; another researcher can rerun the comparison and get the
+              same numbers.
             </p>
           </div>
           <ul class="project-facts">
-            <li><span class="k">Precondition</span><span class="v">Underwrites <em>Distilled-Judge Validity Transfer</em> and <em>Validity versus Agreement</em> &mdash; a judge cannot be certified on machinery that has not been</span></li>
-            <li><span class="k">Standards</span><span class="v">Per-knob attribution mapped to EU AI Act Art. 15 and NIST AI RMF MEASURE 2/3</span></li>
-            <li><span class="k">Continuing</span><span class="v">Declared-randomness certification &mdash; at temperature 0.7 under declared seeds, the floor generalized to an envelope computed from the deterministic runs' own logits</span></li>
-            <li><span class="k">Code</span><span class="v"><code>open-weight-eval-reliability-harness</code> &mdash; MIT, private during IP review; <a href="mailto:barea.sinno@gmail.com?subject=Harness%20repo%20access%20request">request access</a>. See also the <a href="code.html">implementation view</a>.</span></li>
+            <li><span class="k">Evidence</span><span class="v">Seals, receipts, and decision logs &mdash; private during IP review; <a href="mailto:barea.sinno@gmail.com?subject=Harness%20evidence%20access%20request">request access</a></span></li>
           </ul>
         </div>
       </section>
