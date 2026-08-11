@@ -276,18 +276,20 @@
               <strong>White box</strong> &mdash; <em>is the score stable?</em> Weights and configuration in hand, the whole stack is controllable, so reproducibility becomes testable rather than assumed.
               A purpose-built reliability harness &mdash; when the measurement layer is itself the object of
               study, the instrument cannot inherit untested machinery &mdash; testing whether identically
-              configured temperature-0 evaluation ever disagrees with itself. Qwen2.5-0.5B and SmolLM2-360M,
-              a frozen hash-verified 100-prompt probe set, five to ten replications per configuration (more
-              than two dozen hash-verified runs), spanning CPU/GPU execution, precision formats, batching,
-              threading, autotuned kernels, and 2-/4-way tensor-parallel inference on a pinned NVIDIA A100,
-              with hypotheses hashed before any run.
+              configured temperature-0 evaluation ever disagrees with itself, and pricing every condition
+              that makes it disagree. Four open-weight models (Qwen2.5-0.5B/7B, SmolLM2-360M, Mistral-7B),
+              frozen hash-verified prompt suites, five to ten cold-start replications per configuration
+              &mdash; 108 hash-verified runs &mdash; spanning CPU/GPU execution, precision formats, batching,
+              threading, autotuned kernels, and tensor-parallel inference on pinned NVIDIA A100s, with
+              hypotheses hashed before any run.
             </p>
             <div class="finding">
               Every replication was <strong>bit-for-bit identical</strong>. Variance appears only
-              <em>between</em> configurations, spanning four orders of magnitude with precision format
-              dominant &mdash; locating evaluation variance in configuration and version change rather than in
-              the models themselves. The bitwise-zero baseline doubles as a tripwire for silent environment
-              change.
+              <em>between</em> configurations, four orders of magnitude apart with precision format dominant
+              &mdash; number format alone moves declared MMLU accuracy by up to four points in either
+              direction, and fp16 silently destroyed 99.5% of one 7B model's token probabilities, perfectly
+              reproducibly, while sparing its equal-sized cross-architecture twin. The bitwise-zero baseline
+              doubles as a tripwire for silent environment change.
             </div>
             <p style="margin-bottom:0; margin-top:12px;">
               <strong>Glass box</strong> &mdash; <em>can the internal signal be trusted?</em> Behaviour certified at the surface says nothing about what the model computed on the way there.
@@ -300,7 +302,7 @@
           <ul class="project-facts">
             <li><span class="k">Precondition</span><span class="v">Underwrites <em>Distilled-Judge Validity Transfer</em> and <em>Validity versus Agreement</em> &mdash; a judge cannot be certified on machinery that has not been</span></li>
             <li><span class="k">Standards</span><span class="v">Per-knob attribution mapped to EU AI Act Art. 15 and NIST AI RMF MEASURE 2/3</span></li>
-            <li><span class="k">Continuing</span><span class="v">Cross-architecture certification; conformal calibration of the mechanistic layer</span></li>
+            <li><span class="k">Continuing</span><span class="v">Declared-randomness certification &mdash; at temperature 0.7 under declared seeds, the floor generalized to an envelope computed from the deterministic runs' own logits</span></li>
             <li><span class="k">Code</span><span class="v"><code>open-weight-eval-reliability-harness</code> &mdash; MIT, private during IP review; <a href="mailto:barea.sinno@gmail.com?subject=Harness%20repo%20access%20request">request access</a>. See also the <a href="code.html">implementation view</a>.</span></li>
           </ul>
         </div>

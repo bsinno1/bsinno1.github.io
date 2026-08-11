@@ -136,18 +136,60 @@
         </div>
 
         <div class="card">
-          <p style="margin-bottom:6px;"><strong>Open models &mdash; is the copy valid?</strong></p>
-          <p style="margin-bottom:0;">
-            Distilled the dissertation's validated GPT-4 judge into open-weight models (Qwen, Mistral) under
-            hash-chained preregistration with mechanical verdicts: the copies matched the teacher's scores at
-            <em>r</em>&nbsp;=&nbsp;0.74 yet recovered only 0.54 validity against held-out feeling thermometers,
-            versus the teacher's 0.70 &mdash; agreement certifies the copy, not the judge. Extended into a
-            29-judge ladder trained run-by-run under experimenter control (two model families, three sizes,
-            three data doses, mid-training snapshots, a scrambled-label control) to test whether
-            teacher-agreement is a sufficient statistic for criterion validity, under a sealed single-read
-            design: air-gapped criterion, append-only decision log, control gates that bind the experimenter
-            before results are seen. The judges demonstrate the method; the audit regime is the contribution.
+          <p style="margin-bottom:8px;"><strong>White box &mdash; the measuring half: is the score stable, and is the copy valid?</strong></p>
+          <p style="margin-bottom:10px;">
+            <em>Stability.</em> A purpose-built reliability harness &mdash; when the measurement layer is itself
+            the object of study, the instrument cannot inherit untested machinery &mdash; testing whether
+            identically configured temperature-0 evaluation ever disagrees with itself, and pricing every
+            condition that makes it disagree. Four open-weight models (Qwen2.5-0.5B/7B, SmolLM2-360M,
+            Mistral-7B), frozen hash-verified prompt suites, five to ten cold-start replications per
+            configuration &mdash; <strong>108 hash-verified runs</strong> &mdash; spanning CPU/GPU execution,
+            precision formats, batching, threading, autotuned kernels, and tensor-parallel inference on pinned
+            NVIDIA A100s. Every replication was bit-for-bit identical; variance appears only <em>between</em>
+            configurations, four orders of magnitude apart with precision format dominant &mdash; number format
+            alone moves declared MMLU accuracy by up to four points in either direction, and fp16 silently
+            destroyed 99.5% of one 7B model's token probabilities, perfectly reproducibly, while sparing its
+            equal-sized cross-architecture twin. The bitwise-zero baseline doubles as a tripwire for silent
+            environment change. In progress: declared-randomness certification &mdash; at temperature 0.7 under
+            declared seeds, the floor generalized to an envelope computed from the deterministic runs' own
+            logits.
           </p>
+          <p style="margin-bottom:0;">
+            <em>Copy validity.</em> Distilled the dissertation's validated GPT-4 judge into open-weight models
+            (Qwen, Mistral): the copies matched the teacher's scores at <em>r</em>&nbsp;=&nbsp;0.74 yet
+            recovered only 0.54 validity against held-out feeling thermometers, versus the teacher's 0.70
+            &mdash; agreement certifies the copy, not the judge. Extended into a 29-judge ladder trained under
+            experimenter control (two model families, three sizes, three data doses, mid-training snapshots, a
+            scrambled-label control) to test whether teacher-agreement is a sufficient statistic for criterion
+            validity. The judges demonstrate the method; what makes it evidence is the regime below.
+          </p>
+          <div class="repo-meta">
+            <span><code>open-weight-eval-reliability-harness</code> &mdash; private during IP review;
+              <a href="mailto:barea.sinno@gmail.com?subject=Harness%20repo%20access%20request">request access</a></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <p style="margin-bottom:8px;"><strong>Glass box &mdash; the proving half: what can an outsider check?</strong></p>
+          <p style="margin-bottom:0;">
+            One regime governs both instruments. Predictions are sealed before any run &mdash; eighteen
+            hypotheses under named falsification conditions for the harness, SHA-256 hash-chained across eight
+            successive preregistrations, each version provably containing its predecessor; <strong>six
+            fell</strong>, and the falsifications are published as the findings. The judge ladder is that
+            discipline in its sharpest form: a sealed single-read design with an air-gapped criterion,
+            mechanical verdicts, and control gates that bind the experimenter before results are seen.
+            Provenance is read from the machine, not from documentation: every harness run emits a
+            self-hashing manifest whose condition vector &mdash; precision format, kernels, determinism flags,
+            silicon &mdash; is read back from live system state on every execution &mdash; continuous monitoring,
+            not point-in-time certification. Every ruling lands verbatim in an append-only decision log: the
+            dated, attributed test records EU AI Act Annex IV &sect;2(g) describes, aligned to NIST AI RMF
+            record-keeping. MIT-licensed, CI-verified, and built to be re-derivable by an independent party on
+            commodity hardware &mdash; the check a second-line reviewer or external auditor could actually run.
+          </p>
+          <div class="repo-meta">
+            <span>Seals, receipts, and decision logs &mdash; private during IP review;
+              <a href="mailto:barea.sinno@gmail.com?subject=Harness%20evidence%20access%20request">request access</a></span>
+          </div>
         </div>
 
         <h3 class="subhead">LLM Safety Evaluation &amp; Red-Teaming &mdash; Google</h3>
