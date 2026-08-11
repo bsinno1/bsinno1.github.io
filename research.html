@@ -101,12 +101,14 @@
           </p>
         </div>
 
-        <div class="card project">
-          <div class="project-head">
+              <details class="card project">
+        <summary>
+          <span class="project-head">
             <span class="project-title">Text-to-Measurement Instrument</span>
             <span class="status status--progress">In progress &middot; 2026</span>
-          </div>
-          <p class="project-question">Can qualification be reproduced for each new construct, rather than rebuilt by hand?</p>
+          </span>
+          <span class="project-question" style="display:block;">Can qualification be reproduced for each new construct, rather than rebuilt by hand?</span>
+        </summary>
           <div class="project-body">
             <p style="margin-bottom:0;">
               Automating the dissertation's measure&ndash;evaluate&ndash;validate protocol into a general
@@ -114,14 +116,16 @@
               time it is pointed at something new.
             </p>
           </div>
-        </div>
+      </details>
 
-        <div class="card project">
-          <div class="project-head">
+              <details class="card project">
+        <summary>
+          <span class="project-head">
             <span class="project-title">Partisan Affect Before the Feeling Thermometer</span>
             <span class="status status--progress">Analysis ongoing</span>
-          </div>
-          <p class="project-question">What can be measured in the decades before the criterion existed?</p>
+          </span>
+          <span class="project-question" style="display:block;">What can be measured in the decades before the criterion existed?</span>
+        </summary>
           <div class="project-body">
             <p style="margin-bottom:0;">
               The feeling thermometer &mdash; the criterion the dissertation validated against &mdash; begins in
@@ -136,14 +140,16 @@
           <ul class="project-facts">
             <li><span class="k">Data</span><span class="v">ANES open-ended like/dislike responses, 1952 onward <span class="muted">&mdash; permanently private archive; contains ANES respondent data</span></span></li>
           </ul>
-        </div>
+      </details>
 
-        <div class="card project">
-          <div class="project-head">
+              <details class="card project" open>
+        <summary>
+          <span class="project-head">
             <span class="project-title">Distilled-Judge Validity Transfer</span>
             <span class="status status--reported">Completed &middot; 2026</span>
-          </div>
-          <p class="project-question">Do the cheap judge copies used in production retain the validity of the judge they copy?</p>
+          </span>
+          <span class="project-question" style="display:block;">Do the cheap judge copies used in production retain the validity of the judge they copy?</span>
+        </summary>
           <div class="project-body">
             <p style="margin-bottom:0;">
               The first preregistered test of the question. The human-validated GPT-4 instrument &mdash;
@@ -200,14 +206,16 @@
             <li><span class="k">Design</span><span class="v">Hash-chained preregistration; held-out feeling-thermometer criterion; two open-weight replicas of a human-validated teacher</span></li>
             <li><span class="k">Code</span><span class="v"><span class="muted">Preregistration chain, decision logs, and results share one repository with <em>Validity versus Agreement</em>. Public companion in preparation &mdash; code, registrations, and charts, without respondent data.</span></span></li>
           </ul>
-        </div>
+      </details>
 
-        <div class="card project">
-          <div class="project-head">
+              <details class="card project">
+        <summary>
+          <span class="project-head">
             <span class="project-title">Validity versus Agreement</span>
             <span class="status status--progress">In progress &middot; 2026</span>
-          </div>
-          <p class="project-question">Does certification predict validity at all?</p>
+          </span>
+          <span class="project-question" style="display:block;">Does certification predict validity at all?</span>
+        </summary>
           <div class="project-body">
             <p style="margin-bottom:0;">
               A <strong>thirteen-model ladder</strong> &mdash; 0.5B to 7B, ten varied data conditions &mdash; of
@@ -229,7 +237,7 @@
             <li><span class="k">Extends</span><span class="v"><em>Distilled-Judge Validity Transfer</em>, under the same preregistration lineage</span></li>
             <li><span class="k">Apparatus</span><span class="v">Run-by-run experimenter control; append-only training log; air-gapped criterion; a single blind read</span></li>
           </ul>
-        </div>
+      </details>
       </section>
 
       <!-- Open-weight harness -->
@@ -243,12 +251,14 @@
           </p>
         </div>
 
-        <div class="card project">
-          <div class="project-head">
+              <details class="card project">
+        <summary>
+          <span class="project-head">
             <span class="project-title">White box &mdash; the measuring half</span>
             <span class="status status--reported">Running prototype</span>
-          </div>
-          <p class="project-question">Does the result hold still?</p>
+          </span>
+          <span class="project-question" style="display:block;">Does the result hold still?</span>
+        </summary>
           <div class="project-body">
             <p style="margin-bottom:10px;">
               This answers the question every eval team asks under time pressure: <em>is it the model or the
@@ -281,14 +291,16 @@
               flipping), which also bounds how much evaluation is needed to separate models.
             </p>
           </div>
-        </div>
+      </details>
 
-        <div class="card project">
-          <div class="project-head">
+              <details class="card project">
+        <summary>
+          <span class="project-head">
             <span class="project-title">Glass box &mdash; the proving half</span>
             <span class="status status--reported">Running prototype</span>
-          </div>
-          <p class="project-question">What can an outsider check?</p>
+          </span>
+          <span class="project-question" style="display:block;">What can an outsider check?</span>
+        </summary>
           <div class="project-body">
             <p style="margin-bottom:10px;">
               Every hypothesis is sealed under a named falsification condition before its runs, SHA-256
@@ -309,7 +321,7 @@
           <ul class="project-facts">
             <li><span class="k">Evidence</span><span class="v">Seals, receipts, and decision logs &mdash; private during IP review; <a href="mailto:barea.sinno@gmail.com?subject=Harness%20evidence%20access%20request">request access</a></span></li>
           </ul>
-        </div>
+      </details>
       </section>
 
       <!-- Positions -->
@@ -364,5 +376,19 @@
   <footer class="site-footer">
     &copy; 2026 Barea M. Sinno
   </footer>
+  <script>
+    // Expand every project when printing or saving to PDF, then restore.
+    addEventListener('beforeprint', function () {
+      document.querySelectorAll('details').forEach(function (d) {
+        d.dataset.wasOpen = d.open ? '1' : '0';
+        d.open = true;
+      });
+    });
+    addEventListener('afterprint', function () {
+      document.querySelectorAll('details').forEach(function (d) {
+        d.open = d.dataset.wasOpen === '1';
+      });
+    });
+  </script>
 </body>
 </html>

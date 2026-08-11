@@ -259,6 +259,38 @@ section { margin-bottom: 40px; }
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
   margin-bottom: 4px;
 }
+
+/* collapsible projects — native <details>, no script needed to operate */
+details.project { padding-top: 16px; padding-bottom: 16px; }
+details.project > summary {
+  display: block;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 30px;
+  border-radius: var(--radius);
+}
+details.project > summary::-webkit-details-marker { display: none; }
+details.project > summary::after {
+  content: '';
+  position: absolute; right: 6px; top: 8px;
+  width: 8px; height: 8px;
+  border-right: 2px solid var(--text-light);
+  border-bottom: 2px solid var(--text-light);
+  transform: rotate(45deg);
+  transition: transform .18s ease;
+}
+details.project[open] > summary::after { transform: rotate(-135deg); top: 11px; }
+details.project > summary:hover .project-title { color: var(--accent); }
+details.project > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+details.project > summary .project-question { margin-bottom: 0; }
+details.project[open] > summary { margin-bottom: 12px; }
+details.project > summary .project-head { margin-bottom: 4px; }
+
+/* expand everything when printed or saved to PDF */
+@media print {
+  details.project > summary::after { display: none; }
+}
 .project-title {
   font-family: var(--font-serif);
   font-size: 1.12rem; font-weight: 700;
