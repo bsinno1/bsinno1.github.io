@@ -204,7 +204,7 @@
             </p>
           <ul class="project-facts">
             <li><span class="k">Design</span><span class="v">Hash-chained preregistration; held-out feeling-thermometer criterion; two open-weight replicas of a human-validated teacher</span></li>
-            <li><span class="k">Code</span><span class="v"><span class="muted">Preregistration chain, decision logs, and results share one repository with <em>Validity versus Agreement</em>. Public companion in preparation &mdash; code, registrations, and charts, without respondent data.</span></span></li>
+            <li><span class="k">Code</span><span class="v"><a href="https://github.com/bsinno1/judge-validity-audit" target="_blank" rel="noopener">judge-validity-audit</a> &mdash; preregistration chains, decision logs, results, and figures for both studies</span></li>
           </ul>
       </details>
 
@@ -212,19 +212,27 @@
         <summary>
           <span class="project-head">
             <span class="project-title">Validity versus Agreement</span>
-            <span class="status status--progress">In progress &middot; 2026</span>
+            <span class="status status--reported">Verdicts issued &middot; 2026</span>
           </span>
           <span class="project-question" style="display:block;">Does certification predict validity at all?</span>
         </summary>
           <div class="project-body">
+            <p style="margin-bottom:10px;">
+              A <strong>29-adapter ladder</strong> built along two roads to the same agreement: a small model
+              shown everything (capacity-limited) and a large model shown a 10% dose (exposure-limited), with
+              nested doses by respondent, mid-training checkpoints, rank variation, and a scrambled-label
+              control, under a sealed budget of 30. If validity differs where agreement is equal, the
+              certificate is not a sufficient statistic.
+            </p>
             <p style="margin-bottom:0;">
-              A <strong>thirteen-model ladder</strong> &mdash; 0.5B to 7B, ten varied data conditions &mdash; of
-              judge copies fine-tuned run-by-run under experimenter control, with every training decision logged
-              append-only, unlike the automated grid of the prior study. Validity is sealed behind an air gap
-              until <strong>one blind read</strong> of the human criterion.
+              Training was run <strong>by hand, run by run</strong>, under experimenter control, every
+              intervention dated in an append-only decision log &mdash; the log replaces the grid. Hands-on
+              stayed left of the glass: no run, checkpoint, or decision ever saw a criterion value. When the
+              ladder was declared closed, every adapter was SHA-256 hashed and frozen, and the whole ladder met
+              the CDF-verified criterion in <strong>one sealed pass</strong>.
             </p>
             <figure style="margin:14px 0 0;">
-              <img src="assets/img/s2_scatter.svg" alt="Scatter of agreement with the teacher against criterion slope for the thirteen-model ladder, with the attenuation null and the teacher marked at 0.711."
+              <img src="assets/img/s2_scatter.svg" alt="Scatter of agreement with the teacher against criterion slope for every adapter on the ladder, with the attenuation null and the teacher marked at 0.711."
                    style="width:100%; height:auto; border:1px solid var(--border); border-radius:var(--radius); background:#fff;">
               <figcaption class="note" style="margin-top:8px;">
                 The read: agreement with the teacher &mdash; the certificate &mdash; against criterion slope, for
@@ -232,6 +240,30 @@
                 and the teacher at 0.711.
               </figcaption>
             </figure>
+            <div class="finding" style="margin-top:14px;">
+              Agreement <em>orders</em> validity across the full range &mdash; Spearman &rho; 0.821, CI
+              [0.693, 0.879], against a sealed threshold of 0.80 that the interval spans. But every copy sits
+              below the teacher, best validity <strong>0.56 against GPT-4's 0.71</strong>, and copies behave as
+              diluted teachers: <strong>validity &asymp; fidelity &times; teacher validity</strong>, calibration
+              slope 0.90, maximum deviation 0.08. The road does not matter &mdash; capacity-limited and
+              exposure-limited judges at matched fidelity show no validity difference. And among converged
+              judges, fidelity 0.70&ndash;0.74, the certificate stops discriminating altogether: <strong>one in
+              six pairwise rank inversions</strong>.
+              <br><br><strong>Agreement certifies the copy, not the judge.</strong> It says how much of the
+              teacher survived transmission, and nothing about whether the teacher was right. Validation has to
+              touch the world at least once; after that single anchoring, the dilution arithmetic carries
+              agreement the rest of the way.
+            </div>
+            <p style="margin-bottom:0; margin-top:12px;">
+              <strong>The gate fired.</strong> The v4 pooled control gate failed and was adjudicated through
+              hash-chained amendments &mdash; v5, a within-party gate, also failed; v6 established an empirical
+              shuffle-null over eight fresh scrambled-label controls. The nine-draw band came out at
+              [&minus;0.181, +0.065], the original control at &minus;0.097 sat inside it &mdash; a typical
+              nonsense judge, so the apparatus had never been broken &mdash; and every finished judge cleared
+              that ceiling by <strong>&ge;2.6&times;</strong>. <strong>H3: read valid.</strong> The full trail,
+              including a clause-reading ambiguity disclosed before the ruling that resolved it, is in the
+              decision log.
+            </p>
           </div>
           <ul class="project-facts">
             <li><span class="k">Extends</span><span class="v"><em>Distilled-Judge Validity Transfer</em>, under the same preregistration lineage</span></li>
