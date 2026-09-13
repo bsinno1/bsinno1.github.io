@@ -280,6 +280,18 @@
       <section>
         <h2 class="section-title">Open-Weight Evaluation Reliability Harness &mdash; validated from inside: model, or stack?</h2>
         <div class="arc-intro">
+          <p>
+            <strong>Funding and status.</strong> The harness is supported by a merit-reviewed
+            <strong>NSF ACCESS allocation</strong> &mdash; <em>An Error Budget for AI Model Evaluation: an
+            Open-Weight Reliability Harness</em> (SOC260076; 750,000 credits on Delta and DeltaAI at NCSA).
+            The claim the harness makes &mdash; that an observed difference belongs to the model rather than to
+            the serving stack &mdash; holds only if the same measurement is repeated across models, precision
+            formats, kernels, and hardware. The size of that design is what makes it compute-bound, and the
+            allocation is what lets the sweep run at the scale the claim requires. An invention disclosure
+            covering the method is filed with Rutgers and under review.
+          </p>
+        </div>
+        <div class="arc-intro">
           <p style="margin-bottom:0;">
             A running prototype that pins every condition of a computation, turns exactly one, and reads the
             condition vector back from live machine state &mdash; scalable, reusable infrastructure for
